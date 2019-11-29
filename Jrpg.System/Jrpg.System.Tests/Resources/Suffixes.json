@@ -1,0 +1,73 @@
+﻿[
+  {
+    "Name": "NoSuffix",
+    "ParentItemClass": [ "Sword 1", "Dagger", "Helmet" ],
+    "Properties": [],
+    "Weight": 15,
+    "Value": {}
+  },
+  {
+    "Name": "of Piercing",
+    "ParentItemClass": [ "Sword 1", "Dagger" ],
+    "Weight": 10,
+    "Properties": [
+      {
+        "Name": "Attack",
+        "Value": 1
+      }
+    ],
+    "Value": {
+      "Value": 1
+    }
+  },
+  {
+    "Name": "of Performance",
+    "ParentItemClass": [ "Sword 1", "Dagger" ],
+    "Weight": 1,
+    "Properties": [
+      {
+        "Name": "Attack",
+        "Operation": "Multiply",
+        "Value": 1.15
+      },
+      {
+        "Name": "Evasion",
+        "Value": 2
+      }
+    ],
+    "Value": {
+      "Operation": "Multiply",
+      "Value": 1.15
+    }
+  },
+  {
+    "Name": "of Regeneration",
+    "ParentItemClass": [ "Sword 1", "Dagger" ],
+    "Weight": 3,
+    "Properties": [
+      {
+        "Name": "Stamina",
+        "Value": 2
+      }
+    ],
+    "Value": {
+      "Operation": "Multiply",
+      "Value": 1.10
+    }
+  },
+  {
+    "Name": "of the Bear",
+    "ParentItemClass": [ "Helmet" ],
+    "Weight": 1,
+    "Properties": [
+      {
+        "Name": "Stamina",
+        "Value": 2
+      }
+    ],
+    "Value": {
+      "Operation": "Multiply",
+      "Value": 1.10
+    }
+  }
+]

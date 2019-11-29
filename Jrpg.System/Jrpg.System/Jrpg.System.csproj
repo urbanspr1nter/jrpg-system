@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Jrpg.CharacterSystem\Jrpg.CharacterSystem.csproj" />
+    <ProjectReference Include="..\Jrpg.InventorySystem\Jrpg.InventorySystem.csproj" />
+    <ProjectReference Include="..\Jrpg.ItemComponents\Jrpg.ItemComponents.csproj" />
+    <ProjectReference Include="..\Jrpg.InventorySystem.Items.PublishHandlers\Jrpg.Items.PublishHandlers.csproj" />
+    <ProjectReference Include="..\Jrpg.PartySystem\Jrpg.PartySystem.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+</Project>

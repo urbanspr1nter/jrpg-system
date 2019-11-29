@@ -1,0 +1,238 @@
+﻿[
+  {
+    "Name": "NoDrop",
+    "ItemClass": [],
+    "Properties": [],
+    "Value": 0,
+    "BodyPart": "Default"
+  },
+  {
+    "Name": "Tonic",
+    "ItemClass": [],
+    "Properties": [
+      {
+        "Name": "HP Current",
+        "Value": 10
+      }
+    ],
+    "Value": 3,
+    "BodyPart": "Default"
+  },
+  {
+    "Name": "Card Key",
+    "ItemClass": [],
+    "Properties": [],
+    "Value": 0,
+    "BodyPart": "Default",
+    "IsKeyItem": true,
+    "PublishHandler": "Jrpg.Items.PublishHandlers.UnlockDoorHandler"
+  },
+  {
+    "Name": "Soda Pop",
+    "ItemClass": [],
+    "Properties": [],
+    "Value": 0,
+    "BodyPart": "Default",
+    "IsKeyItem": true,
+    "PublishHandler": "Jrpg.Items.PublishHandlers.DrinkHandler"
+  },
+  {
+    "Name": "Dagger",
+    "ItemClass": [
+      {
+        "Name": "NoDrop",
+        "Weight": 15
+      },
+      {
+        "Name": "Dirk",
+        "Weight": 15
+      },
+      {
+        "Name": "Mithril Dagger",
+        "Weight": 10
+      },
+      {
+        "Name": "Gladius",
+        "Weight": 1
+      }
+    ],
+    "Properties": [],
+    "Value": 0,
+    "BodyPart": "Arms"
+  },
+  {
+    "Name": "Dirk",
+    "ItemClass": [],
+    "Properties": [
+      {
+        "Name": "Attack",
+        "Value": 1
+      }
+    ],
+    "Value": 3,
+    "BodyPart": "Arms"
+  },
+  {
+    "Name": "Mithril Dagger",
+    "ItemClass": [],
+    "Properties": [
+      {
+        "Name": "Attack",
+        "Value": 2
+      }
+    ],
+    "Value": 5,
+    "BodyPart": "Arms"
+  },
+  {
+    "Name": "Gladius",
+    "ItemClass": [],
+    "Properties": [
+      {
+        "Name": "Attack",
+        "Value": 4
+      }
+    ],
+    "Value": 10,
+    "BodyPart": "Arms"
+  },
+  {
+    "Name": "Sword 1",
+    "ItemClass": [
+      {
+        "Name": "NoDrop",
+        "Weight": 15
+      },
+      {
+        "Name": "Bronze Sword",
+        "Weight": 15
+      },
+      {
+        "Name": "Iron Sword",
+        "Weight": 10
+      },
+      {
+        "Name": "Crystal Sword",
+        "Weight": 5
+      },
+      {
+        "Name": "Diamond Sword",
+        "Weight": 1
+      }
+    ],
+    "Properties": [],
+    "Value": 0,
+    "BodyPart": "Arms"
+  },
+  {
+    "Name": "Bronze Sword",
+    "ItemClass": [],
+    "Properties": [
+      {
+        "Name": "Attack",
+        "Value": 1
+      }
+    ],
+    "Value": 2
+  },
+  {
+    "Name": "Iron Sword",
+    "ItemClass": [],
+    "Properties": [
+      {
+        "Name": "Attack",
+        "Value": 2
+      },
+      {
+        "Name": "Defense",
+        "Value": 1
+      }
+    ],
+    "Value": 4,
+    "BodyPart": "Arms"
+  },
+  {
+    "Name": "Crystal Sword",
+    "ItemClass": [],
+    "Properties": [
+      {
+        "Name": "Attack",
+        "Value": 7
+      },
+      {
+        "Name": "Defense",
+        "Value": 3
+      },
+      {
+        "Name": "Magic",
+        "Value": 3
+      }
+    ],
+    "Value": 25,
+    "BodyPart": "Arms"
+  },
+  {
+    "Name": "Diamond Sword",
+    "ItemClass": [],
+    "Properties": [
+      {
+        "Name": "Attack",
+        "Value": 10
+      },
+      {
+        "Name": "Defense",
+        "Value": 8
+      },
+      {
+        "Name": "Magic",
+        "Value": 3
+      },
+      {
+        "Name": "Stamina",
+        "Value": 5
+      }
+    ],
+    "Value": 100,
+    "BodyPart": "Arms"
+  },
+  {
+    "Name": "Helmet",
+    "ItemClass": [
+      {
+        "Name": "Leather Helmet",
+        "Weight": 10
+      },
+      {
+        "Name": "Iron Helmet",
+        "Weight": 1
+      }
+    ],
+    "Properties": [],
+    "Value": 0,
+    "BodyPart": "Head"
+  },
+  {
+    "Name": "Leather Helmet",
+    "ItemClass": [],
+    "Properties": [
+      {
+        "Name": "Defense",
+        "Value": 3
+      }
+    ],
+    "Value": 3,
+    "BodyPart": "Head"
+  },
+  {
+    "Name": "Iron Helmet",
+    "ItemClass": [],
+    "Properties": [
+      {
+        "Name": "Defense",
+        "Value": 7
+      }
+    ],
+    "Value": 3,
+    "BodyPart": "Head"
+  }
+]

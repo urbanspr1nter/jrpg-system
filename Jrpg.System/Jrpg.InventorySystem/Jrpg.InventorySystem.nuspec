@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>2.0.1</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>https://github.com/urbanspr1nter/jrpg-inventory-system/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/urbanspr1nter/jrpg-inventory-system</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>Independent package consisting of Inventory management code for JRPG.</releaseNotes>
+    <copyright>Copyright 2019</copyright>
+  </metadata>
+</package>

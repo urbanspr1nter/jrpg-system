@@ -1,0 +1,112 @@
+﻿[
+  {
+    "Name": "NoPrefix",
+    "ParentItemClass": [ "Sword 1", "Dagger", "Helmet" ],
+    "Properties": [],
+    "Weight": 15,
+    "Value": {}
+  },
+  {
+    "Name": "Cracked",
+    "ParentItemClass": [ "Sword 1", "Dagger" ],
+    "Weight": 10,
+    "Properties": [
+      {
+        "Name": "Attack",
+        "Operation": "Multiply",
+        "Value": 0.5
+      }
+    ],
+    "Value": {
+      "Operation": "Multiply",
+      "Value": 0.5
+    }
+  },
+  {
+    "Name": "Deadly",
+    "ParentItemClass": [ "Sword 1", "Dagger" ],
+    "Weight": 5,
+    "Properties": [
+      {
+        "Name": "Attack",
+        "Operation": "Multiply",
+        "Value": 1.15
+      }
+    ],
+    "Value": {
+      "Operation": "Multiply",
+      "Value": 1.10
+    }
+  },
+  {
+    "Name": "Superior",
+    "ParentItemClass": [ "Sword 1", "Dagger" ],
+    "Weight": 7,
+    "Properties": [
+      {
+        "Name": "Attack",
+        "Value": 1
+      },
+      {
+        "Name": "Defense",
+        "Value": 2
+      }
+    ],
+    "Value": {
+      "Operation": "Multiply",
+      "Value": "1.00"
+    }
+  },
+  {
+    "Name": "Lucky",
+    "ParentItemClass": [ "Sword 1", "Dagger" ],
+    "Weight": 1,
+    "Properties": [
+      {
+        "Name": "Attack",
+        "Operation": "Multiply",
+        "Value": 1.15
+      },
+      {
+        "Name": "Evasion",
+        "Value": 2
+      }
+    ],
+    "Value": {
+      "Operation": "Multiply",
+      "Value": 1.15
+    }
+  },
+  {
+    "Name": "Worn",
+    "ParentItemClass": [ "Helmet" ],
+    "Weight": 5,
+    "Properties": [
+      {
+        "Name": "Defense",
+        "Operation": "Multiply",
+        "Value": 0.75
+      }
+    ],
+    "Value": {
+      "Operation": "Multiply",
+      "Value": 0.5
+    }
+  },
+  {
+    "Name": "Marvelous",
+    "ParentItemClass": [ "Helmet" ],
+    "Weight": 5,
+    "Properties": [
+      {
+        "Name": "Defense",
+        "Operation": "Multiply",
+        "Value": 1.5
+      }
+    ],
+    "Value": {
+      "Operation": "Multiply",
+      "Value": 2
+    }
+  }
+]

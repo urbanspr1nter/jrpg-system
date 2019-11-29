@@ -1,0 +1,57 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <OutputType>Library</OutputType>
+    <ReleaseVersion>2.0.0</ReleaseVersion>
+    <SynchReleaseVersion>false</SynchReleaseVersion>
+    <PackageId>Jrpg.InventorySystem</PackageId>
+    <PackageVersion>2.0.0</PackageVersion>
+    <Authors>Roger Ngo</Authors>
+    <Copyright>2019</Copyright>
+    <PackageLicenseUrl>https://github.com/urbanspr1nter/jrpg-inventory-system/blob/master/LICENSE</PackageLicenseUrl>
+    <Owners>Roger Ngo</Owners>
+    <PackageProjectUrl>https://github.com/urbanspr1nter/jrpg-inventory-system</PackageProjectUrl>
+    <Summary>JRPG Inventory System</Summary>
+    <Title>Jrpg.InventorySystem</Title>
+    <Description>(C) 2019, Roger Ngo</Description>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <LangVersion>7.0</LangVersion>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <LangVersion>7.0</LangVersion>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'InventorySystem' ">
+    <StartAction>Project</StartAction>
+    <ApplicationURL>https://localhost:5001;http://localhost:5000</ApplicationURL>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="Microsoft.Bcl.HashCode" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Items\" />
+    <Folder Include="PgItems\" />
+    <Folder Include="Utils\" />
+    <Folder Include="Utils\DbReader\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="Properties\launchSettings.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Jrpg.CharacterSystem\Jrpg.CharacterSystem.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+    <ProjectReference Include="..\Jrpg.ItemComponents\Jrpg.ItemComponents.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+    <ProjectReference Include="..\Jrpg.InventorySystem.Items.PublishHandlers\Jrpg.Items.PublishHandlers.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

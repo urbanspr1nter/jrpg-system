@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ReleaseVersion>1.0.0</ReleaseVersion>
+    <Description>(C) 2019, Roger Ngo</Description>
+    <SynchReleaseVersion>false</SynchReleaseVersion>
+    <PackageId>Jrpg.PartySystem</PackageId>
+    <Authors>Roger Ngo</Authors>
+    <Copyright>2019</Copyright>
+    <PackageLicenseUrl>https://github.com/urbanspr1nter/jrpg-party-system/blob/master/LICENSE</PackageLicenseUrl>
+    <Owners>Roger Ngo</Owners>
+    <PackageProjectUrl>https://github.com/urbanspr1nter/jrpg-party-system</PackageProjectUrl>
+    <Title>Jrpg.PartySystem</Title>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <LangVersion>7.0</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <LangVersion>7.0</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Jrpg.CharacterSystem\Jrpg.CharacterSystem.csproj" />
+    <ProjectReference Include="..\Jrpg.InventorySystem\Jrpg.InventorySystem.csproj" />
+    <ProjectReference Include="..\Jrpg.ItemComponents\Jrpg.ItemComponents.csproj" />
+  </ItemGroup>
+</Project>

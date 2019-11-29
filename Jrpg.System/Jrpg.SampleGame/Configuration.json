@@ -1,0 +1,16 @@
+﻿{
+  "MemberNames": [
+    "Ash",
+    "Gary"
+  ],
+  "someObject": {
+    "Value": 32,
+    "StringValue": "Embers of Home",
+    "FlagValue": true,
+    "ListValue": [ "Ash", "Gary", "Oak" ],
+    "LocationValue": {
+      "X": 23,
+      "Y":  88
+    }
+  }
+}

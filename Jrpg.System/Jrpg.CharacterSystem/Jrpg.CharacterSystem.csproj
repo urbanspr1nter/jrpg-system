@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>Jrpg.CharacterSystem</PackageId>
+    <Authors>Roger Ngo</Authors>
+    <Copyright>2019</Copyright>
+    <PackageLicenseUrl>https://github.com/urbanspr1nter/jrpg-character-system/blob/master/LICENSE</PackageLicenseUrl>
+    <Owners>Roger Ngo</Owners>
+    <PackageProjectUrl>https://github.com/urbanspr1nter/jrpg-character-system</PackageProjectUrl>
+    <Title>Jrpg.CharacterSystem</Title>
+    <ReleaseVersion>1.0.1</ReleaseVersion>
+    <SynchReleaseVersion>false</SynchReleaseVersion>
+    <Description>(C) 2019 Roger Ngo</Description>
+    <PackageVersion>1.0.1</PackageVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="InventoryManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove=".DS_Store" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Scalers\" />
+    <Folder Include="Classes\" />
+    <Folder Include="Scalers\Freelancer\" />
+    <Folder Include="StatusEffects\" />
+    <Folder Include="StatusEffects\Effects\" />
+    <Folder Include="GameState\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Jrpg.ItemComponents\Jrpg.ItemComponents.csproj" />
+  </ItemGroup>
+</Project>

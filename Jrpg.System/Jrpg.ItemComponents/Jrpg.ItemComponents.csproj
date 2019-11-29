@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Description>Item components for a JRPG system.</Description>
+    <ReleaseVersion>1.0.1</ReleaseVersion>
+    <SynchReleaseVersion>false</SynchReleaseVersion>
+    <Authors>Roger Ngo</Authors>
+    <Copyright>2019, Roger Ngo</Copyright>
+    <PackageLicenseUrl>https://github.com/urbanspr1nter/jrpg-item-components/blob/master/LICENSE</PackageLicenseUrl>
+    <Owners>Roger Ngo</Owners>
+    <PackageProjectUrl>https://github.com/urbanspr1nter/jrpg-item-components</PackageProjectUrl>
+    <Title>ItemComponents</Title>
+    <PackageId>Jrpg.ItemComponents</PackageId>
+    <PackageVersion>1.0.1</PackageVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <LangVersion>7.0</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <LangVersion>7.0</LangVersion>
+  </PropertyGroup>
+</Project>

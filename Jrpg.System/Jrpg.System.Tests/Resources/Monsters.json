@@ -1,0 +1,28 @@
+﻿[
+  {
+    "Name": "Slime",
+    "Level": 1,
+    "ItemClass": [
+      {
+        "Name": "NoDrop",
+        "Weight": 10
+      },
+      {
+        "Name": "Tonic",
+        "Weight": 5
+      },
+      {
+        "Name": "Sword 1",
+        "Weight": 1
+      },
+      {
+        "Name": "Dagger",
+        "Weight": 1
+      },
+      {
+        "Name": "Helmet",
+        "Weight":  3
+      }
+    ]
+  }
+]
