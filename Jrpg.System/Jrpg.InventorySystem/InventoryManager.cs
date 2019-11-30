@@ -25,8 +25,9 @@ namespace Jrpg.InventorySystem
                     Quantity = registry[name].Quantity,
                     Name = new ItemName(name),
                     Value = registry[name].Item.Value,
-                    Description = name
-                });
+                    Description = name,
+                    IsKeyItem = registry[name].Item.IsKeyItem
+                }) ;
             }
 
             return data;
