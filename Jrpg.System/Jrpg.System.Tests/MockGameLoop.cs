@@ -1,6 +1,6 @@
 ﻿using System;
 using Jrpg.CharacterSystem.StatusEffects;
-using Jrpg.CharacterSystem.GameState;
+using Jrpg.GameState;
 
 namespace Jrpg.System.Tests
 {

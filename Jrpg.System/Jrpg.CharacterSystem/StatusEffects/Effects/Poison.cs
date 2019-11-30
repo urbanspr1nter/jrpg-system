@@ -1,5 +1,5 @@
 ﻿using System;
-using Jrpg.CharacterSystem.GameState;
+using Jrpg.GameState;
 namespace Jrpg.CharacterSystem.StatusEffects.Effects
 {
     class Poison : StatusEffect

@@ -25,7 +25,7 @@
     "Value": 0,
     "BodyPart": "Default",
     "IsKeyItem": true,
-    "PublishHandler": "Jrpg.Items.PublishHandlers.UnlockDoorHandler"
+    "PublishHandler": "Jrpg.Items.PublishHandlers.UnlockDoorHandler, Jrpg.Items.PublishHandlers"
   },
   {
     "Name": "Soda Pop",
@@ -34,7 +34,7 @@
     "Value": 0,
     "BodyPart": "Default",
     "IsKeyItem": true,
-    "PublishHandler": "Jrpg.Items.PublishHandlers.DrinkHandler"
+    "PublishHandler": "Jrpg.Items.PublishHandlers.DrinkHandler, Jrpg.Items.PublishHandlers"
   },
   {
     "Name": "Dagger",

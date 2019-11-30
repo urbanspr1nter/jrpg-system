@@ -1,7 +1,7 @@
 ﻿using System;
 using Jrpg.CharacterSystem;
 using Jrpg.CharacterSystem.StatusEffects;
-using Jrpg.CharacterSystem.GameState;
+using Jrpg.GameState;
 using Jrpg.InventorySystem;
 using Jrpg.PartySystem;
 using Xunit;

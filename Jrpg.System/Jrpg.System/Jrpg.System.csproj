@@ -10,6 +10,7 @@
     <ProjectReference Include="..\Jrpg.ItemComponents\Jrpg.ItemComponents.csproj" />
     <ProjectReference Include="..\Jrpg.InventorySystem.Items.PublishHandlers\Jrpg.Items.PublishHandlers.csproj" />
     <ProjectReference Include="..\Jrpg.PartySystem\Jrpg.PartySystem.csproj" />
+    <ProjectReference Include="..\Jrpg.GameState\Jrpg.GameState.csproj" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />

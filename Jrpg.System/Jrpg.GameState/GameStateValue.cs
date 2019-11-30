@@ -1,8 +1,9 @@
 ﻿using System;
-namespace Jrpg.CharacterSystem.GameState
+namespace Jrpg.GameState
 {
     public enum GameStateValue
     {
+        Title,
         World,
         Map,
         Battle,

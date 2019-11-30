@@ -27,9 +27,9 @@
     <Folder Include="Scalers\Freelancer\" />
     <Folder Include="StatusEffects\" />
     <Folder Include="StatusEffects\Effects\" />
-    <Folder Include="GameState\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Jrpg.ItemComponents\Jrpg.ItemComponents.csproj" />
+    <ProjectReference Include="..\Jrpg.GameState\Jrpg.GameState.csproj" />
   </ItemGroup>
 </Project>

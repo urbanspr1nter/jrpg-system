@@ -1,5 +1,5 @@
 ﻿using System;
-using Jrpg.CharacterSystem.GameState;
+using Jrpg.GameState;
 using System.Collections.Generic;
 
 namespace Jrpg.CharacterSystem.StatusEffects.Effects

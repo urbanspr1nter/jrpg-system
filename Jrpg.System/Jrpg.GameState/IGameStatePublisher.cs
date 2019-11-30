@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Jrpg.CharacterSystem.GameState
+namespace Jrpg.GameState
 {
     public interface IGameStatePublisher
     {

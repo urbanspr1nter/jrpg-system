@@ -1,5 +1,5 @@
 ﻿using System;
-using Jrpg.CharacterSystem.GameState;
+using Jrpg.GameState;
 using System.Collections.Generic;
 
 namespace Jrpg.CharacterSystem.StatusEffects
@@ -72,6 +72,11 @@ namespace Jrpg.CharacterSystem.StatusEffects
 
         public void RemoveEffect(Character character, StatusEffectType statusEffectType)
         {
+            if(!map.ContainsKey(character))
+            {
+                return;
+            }
+
             StatusEffect toRemove = null;
             foreach(var statusEffect in map[character])
             {
@@ -80,6 +85,11 @@ namespace Jrpg.CharacterSystem.StatusEffects
                     toRemove = statusEffect;
                     break;
                 }
+            }
+
+            if(toRemove == null)
+            {
+                return;
             }
 
             toRemove.OnRemove(character, _state);

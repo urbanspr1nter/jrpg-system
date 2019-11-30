@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-namespace Jrpg.CharacterSystem.GameState
+namespace Jrpg.GameState
 {
     public class GameStateManager : IGameStatePublisher
     {

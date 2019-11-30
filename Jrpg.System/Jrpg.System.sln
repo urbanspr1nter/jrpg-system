@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jrpg.System.Tests", "Jrpg.S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jrpg.SampleGame", "Jrpg.SampleGame\Jrpg.SampleGame.csproj", "{79266637-D1F5-4A11-A1C4-770FBF466FBA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jrpg.GameState", "Jrpg.GameState\Jrpg.GameState.csproj", "{92FEC4DF-11CA-4396-96D9-F8634F5F97DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,5 +57,9 @@ Global
 		{79266637-D1F5-4A11-A1C4-770FBF466FBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79266637-D1F5-4A11-A1C4-770FBF466FBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79266637-D1F5-4A11-A1C4-770FBF466FBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92FEC4DF-11CA-4396-96D9-F8634F5F97DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92FEC4DF-11CA-4396-96D9-F8634F5F97DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92FEC4DF-11CA-4396-96D9-F8634F5F97DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92FEC4DF-11CA-4396-96D9-F8634F5F97DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
