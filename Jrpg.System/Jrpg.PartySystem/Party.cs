@@ -108,6 +108,11 @@ namespace Jrpg.PartySystem
             return members[name];
         }
 
+        public List<Character> GetMembers()
+        {
+            return new List<Character>(members.Values);
+        }
+
         public int GetWalletAmount()
         {
             return wallet;
