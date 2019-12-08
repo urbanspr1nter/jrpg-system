@@ -20,9 +20,6 @@ namespace Jrpg.System.Tests
         public void SetGameState(GameStateValue state)
         {
             gameStateManager.PublishStateUpdate(state);
-
-            // Changing the state should also invoke a clean-up routine
-            StatusEffectManager.CleanUp();
         }
 
         public GameStateValue GetGameState()
@@ -35,6 +32,7 @@ namespace Jrpg.System.Tests
             StatusEffectManager.BeforeEffects();
             StatusEffectManager.PerformEffects();
             StatusEffectManager.AfterEffects();
+            StatusEffectManager.CleanUp();
         }
     }
 }

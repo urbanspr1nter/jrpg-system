@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using Jrpg.CharacterSystem.Scalers;
 using Jrpg.CharacterSystem.Scalers.Freelancer;
+using Jrpg.CharacterSystem.Techniques;
 
 namespace Jrpg.CharacterSystem.Classes
 {
-    public class Freelancer
+    class Freelancer : ICharacterClass
     {
         private Dictionary<StatisticType, Statistic> Statistics;
+        public List<TechniqueName> TechniqueNames { get; private set; }
 
         private IStatisticScaler levelScaler;
         private IStatisticScaler hpScaler;
@@ -38,64 +40,66 @@ namespace Jrpg.CharacterSystem.Classes
             evasionScaler = new EvasionScaler();
             magicDefenseScaler = new MagicDefenseScaler();
             magicEvasionScaler = new MagicEvasionScaler();
+
+            TechniqueNames = new List<TechniqueName>();
         }
 
-        private Statistic NextLevel()
+        public Statistic NextLevel()
         {
             return levelScaler.NewStatistic(Statistics);
         }
 
-        private Statistic NextHpMax()
+        public Statistic NextHpMax()
         {
             return hpScaler.NewStatistic(Statistics);
         }
 
-        private Statistic NextMpMax()
+        public Statistic NextMpMax()
         {
             return mpScaler.NewStatistic(Statistics);
         }
 
-        private Statistic NextStrength()
+        public Statistic NextStrength()
         {
             return strengthScaler.NewStatistic(Statistics);
         }
 
-        private Statistic NextSpeed()
+        public Statistic NextSpeed()
         {
             return speedScaler.NewStatistic(Statistics);
         }
 
-        private Statistic NextStamina()
+        public Statistic NextStamina()
         {
             return staminaScaler.NewStatistic(Statistics);
         }
 
-        private Statistic NextMagic()
+        public Statistic NextMagic()
         {
             return magicScaler.NewStatistic(Statistics);
         }
 
-        private Statistic NextAttack()
+        public Statistic NextAttack()
         {
             return attackScaler.NewStatistic(Statistics);
         }
 
-        private Statistic NextDefense()
+        public Statistic NextDefense()
         {
             return defenseScaler.NewStatistic(Statistics);
         }
 
-        private Statistic NextEvasion()
+        public Statistic NextEvasion()
         {
             return evasionScaler.NewStatistic(Statistics);
         }
 
-        private Statistic NextMagicDefense()
+        public Statistic NextMagicDefense()
         {
             return magicDefenseScaler.NewStatistic(Statistics);
         }
 
-        private Statistic NextMagicEvasion()
+        public Statistic NextMagicEvasion()
         {
             return magicEvasionScaler.NewStatistic(Statistics);
         }
@@ -119,6 +123,14 @@ namespace Jrpg.CharacterSystem.Classes
             Statistics[StatisticType.Evasion] = NextEvasion();
             Statistics[StatisticType.MagicDefense] = NextMagicDefense();
             Statistics[StatisticType.MagicEvasion] = NextMagicEvasion();
+
+            if(Statistics[StatisticType.Level].CurrentValue == 2)
+            {
+                TechniqueNames.Add(TechniqueName.Regen);
+                TechniqueNames.Add(TechniqueName.Fire);
+                TechniqueNames.Add(TechniqueName.Fira);
+                TechniqueNames.Add(TechniqueName.Firaga);
+            }
         }
     }
 }

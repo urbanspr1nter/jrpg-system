@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using Jrpg.CharacterSystem.Classes;
+using Jrpg.CharacterSystem.Techniques;
+using Jrpg.CharacterSystem.StatusEffects;
 
 namespace Jrpg.CharacterSystem
 {
@@ -36,6 +38,18 @@ namespace Jrpg.CharacterSystem
                 Statistics.Add(statType, new Statistic(statType, StatMaxes[statType]));
                 Statistics[statType].CurrentValue = DefaultValues[statType];
             }
+        }
+
+        public void UseTechnique(TechniqueName name, StatusEffectManager statusEffectManager, List<Character> targets)
+        {
+            if(!currentClass.TechniqueNames.Exists(n => n == name))
+            {
+                return;
+            }
+
+            var technique = new TechniqueFactory(statusEffectManager).GetTech(name);
+
+            technique.Perform(this, targets);
         }
 
         private int NextExperienceThreshold(int currentLevel)

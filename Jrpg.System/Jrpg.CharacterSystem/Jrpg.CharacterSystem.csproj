@@ -27,6 +27,10 @@
     <Folder Include="Scalers\Freelancer\" />
     <Folder Include="StatusEffects\" />
     <Folder Include="StatusEffects\Effects\" />
+    <Folder Include="Techniques\" />
+    <Folder Include="Techniques\Concrete\" />
+    <Folder Include="Scalers\WhiteMage\" />
+    <Folder Include="Scalers\BlackMage\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Jrpg.ItemComponents\Jrpg.ItemComponents.csproj" />
