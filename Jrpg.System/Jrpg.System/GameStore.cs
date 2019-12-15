@@ -4,6 +4,7 @@ using Jrpg.PartySystem;
 using Jrpg.InventorySystem;
 using Jrpg.GameState;
 using Jrpg.CharacterSystem.StatusEffects;
+using Jrpg.CharacterSystem.Classes;
 
 namespace Jrpg.System
 {
@@ -17,6 +18,7 @@ namespace Jrpg.System
         public Configuration Config { get; private set; }
         public Party MainParty { get; private set; }
         public StatusEffectManager StatusEffectManager { get; private set; }
+        public ClassManager JobClassManager { get; private set; }
 
         public Dictionary<string, object> DataStore { get; }
 
@@ -26,6 +28,7 @@ namespace Jrpg.System
             MainParty = new Party(InventoryManager);
             GameStateManager = new GameStateManager(GameStateValue.Title);
             StatusEffectManager = new StatusEffectManager();
+            JobClassManager = new ClassManager();
             DataStore = new Dictionary<string, object>();
         }
 

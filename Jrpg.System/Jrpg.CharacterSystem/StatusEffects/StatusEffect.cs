@@ -2,7 +2,7 @@
 using Jrpg.GameState;
 namespace Jrpg.CharacterSystem.StatusEffects
 {
-    abstract class StatusEffect: IStatusEffect
+    public abstract class StatusEffect: IStatusEffect
     {
         public virtual void AfterEffect(Character character, GameStateValue state)
         {
@@ -34,6 +34,6 @@ namespace Jrpg.CharacterSystem.StatusEffects
             return false;
         }
 
-        public abstract StatusEffectType GetStatusEffectType();
+        public abstract string GetStatusEffectName();
     }
 }

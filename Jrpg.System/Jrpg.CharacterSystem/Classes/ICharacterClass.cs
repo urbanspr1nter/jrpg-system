@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Jrpg.CharacterSystem.Classes
 {
-    interface ICharacterClass
+    public interface ICharacterClass
     {
         Statistic NextLevel();
         Statistic NextHpMax();

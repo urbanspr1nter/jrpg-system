@@ -1,26 +1,35 @@
 ﻿using System;
-using Jrpg.CharacterSystem.StatusEffects.Effects;
+using System.Collections.Generic;
+using Jrpg.CharacterSystem.StatusEffects.Definitions;
 
 namespace Jrpg.CharacterSystem.StatusEffects
 {
     class StatusEffectFactory
     {
-        public static StatusEffect BuildStatusEffect(StatusEffectType statusEffectType)
+        private Dictionary<string, StatusEffectDefinition> registered;
+
+        public StatusEffectFactory()
         {
-            if (statusEffectType == StatusEffectType.Mini)
+            registered = new Dictionary<string, StatusEffectDefinition>();
+        }
+
+        public void Register(string name, StatusEffectDefinition definition)
+        {
+            registered[name] = definition;
+        }
+
+        public StatusEffect BuildStatusEffect(string name)
+        {
+            if(!registered.ContainsKey(name))
             {
-                return new Mini();
-            }
-            else if (statusEffectType == StatusEffectType.Poison)
-            {
-                return new Poison();
-            }
-            else if (statusEffectType == StatusEffectType.Regen)
-            {
-                return new Regen();
+                throw new KeyNotFoundException("The status effect definition was not found with this name.");
             }
 
-            return null;
+            var definition = registered[name];
+            var statusEffect = (StatusEffect)Activator
+                .CreateInstance(Type.GetType(definition.Agent), new object[] { });
+
+            return statusEffect;
         }
     }
 }

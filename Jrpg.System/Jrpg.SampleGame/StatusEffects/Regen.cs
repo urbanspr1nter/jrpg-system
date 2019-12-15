@@ -1,6 +1,9 @@
 ﻿using System;
+using Jrpg.CharacterSystem;
+using Jrpg.CharacterSystem.StatusEffects;
 using Jrpg.GameState;
-namespace Jrpg.CharacterSystem.StatusEffects.Effects
+
+namespace Jrpg.SampleGame.StatusEffects
 {
      class Regen : StatusEffect
     {
@@ -33,9 +36,9 @@ namespace Jrpg.CharacterSystem.StatusEffects.Effects
             return true;
         }
 
-        public override StatusEffectType GetStatusEffectType()
+        public override string GetStatusEffectName()
         {
-            return StatusEffectType.Regen;
+            return "Regen";
         }
     }
 }

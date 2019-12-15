@@ -30,7 +30,7 @@ namespace Jrpg.System.Tests
 
             gameLoop.SetGameState(GameStateValue.Battle);
 
-            gameLoop.StatusEffectManager.ApplyEffect(tifa, StatusEffectType.Poison);
+            gameLoop.StatusEffectManager.ApplyEffect(tifa, "Poison");
             Assert.Equal(30, tifa.Statistics[StatisticType.HpCurrent].CurrentValue);
             Assert.Equal(30, cloud.Statistics[StatisticType.HpCurrent].CurrentValue);
             Assert.Equal(30, aerith.Statistics[StatisticType.HpCurrent].CurrentValue);
@@ -72,14 +72,14 @@ namespace Jrpg.System.Tests
 
             aerith.Statistics[StatisticType.HpCurrent].CurrentValue = 20;
 
-            gameLoop.StatusEffectManager.ApplyEffect(aerith, StatusEffectType.Regen);
+            gameLoop.StatusEffectManager.ApplyEffect(aerith, "Regen");
             Assert.Equal(30, tifa.Statistics[StatisticType.HpCurrent].CurrentValue);
             Assert.Equal(30, cloud.Statistics[StatisticType.HpCurrent].CurrentValue);
             Assert.Equal(20, aerith.Statistics[StatisticType.HpCurrent].CurrentValue);
 
             gameLoop.Step();
 
-            Assert.Equal(1, gameLoop.StatusEffectManager.StatusEffectTypes(aerith).Count);
+            Assert.Equal(1, gameLoop.StatusEffectManager.StatusEffectNames(aerith).Count);
 
             Assert.Equal(30, tifa.Statistics[StatisticType.HpCurrent].CurrentValue);
             Assert.Equal(30, cloud.Statistics[StatisticType.HpCurrent].CurrentValue);
@@ -93,7 +93,7 @@ namespace Jrpg.System.Tests
             gameLoop.SetGameState(GameStateValue.World);
             gameLoop.Step();
 
-            Assert.Equal(0, gameLoop.StatusEffectManager.StatusEffectTypes(aerith).Count);
+            Assert.Equal(0, gameLoop.StatusEffectManager.StatusEffectNames(aerith).Count);
 
             gameLoop.Step();
             gameLoop.Step();
@@ -132,7 +132,7 @@ namespace Jrpg.System.Tests
             Assert.Equal(7, aerith.Statistics[StatisticType.Attack].CurrentValue);
 
             gameLoop.SetGameState(GameStateValue.Battle);
-            gameLoop.StatusEffectManager.ApplyEffect(cloud, StatusEffectType.Mini);
+            gameLoop.StatusEffectManager.ApplyEffect(cloud, "Mini");
             gameLoop.Step();
 
             Assert.Equal(30, tifa.Statistics[StatisticType.HpCurrent].CurrentValue);
@@ -156,7 +156,7 @@ namespace Jrpg.System.Tests
             Assert.Equal(7, aerith.Statistics[StatisticType.Attack].CurrentValue);
 
             gameLoop.Step();
-            gameLoop.StatusEffectManager.RemoveEffect(cloud, StatusEffectType.Mini);
+            gameLoop.StatusEffectManager.RemoveEffect(cloud, "Mini");
             gameLoop.Step();
             Assert.Equal(7, cloud.Statistics[StatisticType.Attack].CurrentValue);
             Assert.Equal(7, tifa.Statistics[StatisticType.Attack].CurrentValue);

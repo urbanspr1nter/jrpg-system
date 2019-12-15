@@ -12,5 +12,24 @@
     <None Update="Configuration.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Resources\Techniques.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\CharacterClasses.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\StatusEffects.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Characters\" />
+    <Folder Include="Characters\JobClasses\" />
+    <Folder Include="Techniques\" />
+    <Folder Include="Characters\Scalers\" />
+    <Folder Include="Characters\Scalers\WhiteMage\" />
+    <Folder Include="Characters\Scalers\BlackMage\" />
+    <Folder Include="StatusEffects\" />
   </ItemGroup>
 </Project>

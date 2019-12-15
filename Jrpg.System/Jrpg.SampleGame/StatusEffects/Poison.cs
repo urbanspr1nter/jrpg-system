@@ -1,6 +1,9 @@
 ﻿using System;
+using Jrpg.CharacterSystem;
+using Jrpg.CharacterSystem.StatusEffects;
 using Jrpg.GameState;
-namespace Jrpg.CharacterSystem.StatusEffects.Effects
+
+namespace Jrpg.SampleGame.StatusEffects
 {
     class Poison : StatusEffect
     {
@@ -14,9 +17,9 @@ namespace Jrpg.CharacterSystem.StatusEffects.Effects
             character.Statistics[StatisticType.HpCurrent].CurrentValue -= 2;
         }
 
-        public override StatusEffectType GetStatusEffectType()
+        public override string GetStatusEffectName()
         {
-            return StatusEffectType.Poison;
+            return "Poison";
         }
     }
 }

@@ -1,0 +1,17 @@
+﻿[
+  {
+    "Id": "Status_Regen",
+    "DisplayName": "Regen",
+    "Agent": "Jrpg.SampleGame.StatusEffects.Regen, Jrpg.SampleGame"
+  },
+  {
+    "Id": "Status_Poison",
+    "DisplayName": "Poison",
+    "Agent": "Jrpg.SampleGame.StatusEffects.Poison, Jrpg.SampleGame"
+  },
+  {
+    "Id": "Status_Mini",
+    "DisplayName": "Mini",
+    "Agent": "Jrpg.SampleGame.StatusEffects.Mini, Jrpg.SampleGame"
+  }
+]

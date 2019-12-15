@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Jrpg.CharacterSystem.Classes;
 using Jrpg.CharacterSystem.Techniques;
 using Jrpg.CharacterSystem.StatusEffects;
@@ -11,11 +12,17 @@ namespace Jrpg.CharacterSystem
         public CharacterBody Body { get; }
         public string Name { get; set; }
         public Dictionary<StatisticType, Statistic> Statistics {
-            get;
-            set;
+            get
+            {
+                return currentClass.Statistics;
+            }
+            set
+            {
+                currentClass.Statistics = value;
+            }
         }
 
-        private Freelancer currentClass;
+        private BaseCharacterClass currentClass;
 
         private int _nextExpLimit;
         public int ExperienceForNextLevel {
@@ -28,26 +35,36 @@ namespace Jrpg.CharacterSystem
         {
             Body = new CharacterBody();
             Name = name;
-            Statistics = new Dictionary<StatisticType, Statistic>();
-            currentClass = new Freelancer(Statistics);
+            var startingStats = new Dictionary<StatisticType, Statistic>();
 
             var StatMaxes = StatisticTypeCollection.MaxValues;
             var DefaultValues = StatisticTypeCollection.DefaultValues;
             foreach(var statType in StatisticTypeCollection.All)
             {
-                Statistics.Add(statType, new Statistic(statType, StatMaxes[statType]));
-                Statistics[statType].CurrentValue = DefaultValues[statType];
+                startingStats.Add(statType, new Statistic(statType, StatMaxes[statType]));
+                startingStats[statType].CurrentValue = DefaultValues[statType];
             }
+
+            currentClass = new Freelancer(startingStats);
+        }
+
+        public Character(string name, BaseCharacterClass defaultJobClass)
+        {
+            Body = new CharacterBody();
+            Name = name;
+            currentClass = defaultJobClass;
         }
 
         public void UseTechnique(TechniqueName name, StatusEffectManager statusEffectManager, List<Character> targets)
         {
-            if(!currentClass.TechniqueNames.Exists(n => n == name))
+            var techniqueDefinition = currentClass.TechniqueDefinitions.Find(t => t.DisplayName.Equals(name.Name));
+
+            if (techniqueDefinition == null)
             {
                 return;
             }
 
-            var technique = new TechniqueFactory(statusEffectManager).GetTech(name);
+            var technique = new TechniqueFactory(statusEffectManager).CreateTechnique(techniqueDefinition);
 
             technique.Perform(this, targets);
         }
@@ -71,9 +88,19 @@ namespace Jrpg.CharacterSystem
             return result;
         }
 
+        public void ChangeClass(BaseCharacterClass jobClass)
+        {
+            currentClass = jobClass;
+        }
+
         public string CurrentClassName()
         {
             return currentClass.ClassName();
+        }
+
+        public List<string> TechniqueDefinitions()
+        {
+            return currentClass.TechniqueDefinitions.Select(t => t.DisplayName).ToList();
         }
 
         private bool MaybeLevelUp()

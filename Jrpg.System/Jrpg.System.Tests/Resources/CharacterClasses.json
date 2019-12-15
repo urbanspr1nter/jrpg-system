@@ -1,0 +1,221 @@
+﻿[
+  {
+    "Name": "Enemy",
+    "Agent": "Jrpg.SampleGame.Characters.JobClasses.Enemy, Jrpg.SampleGame",
+    "Techniques": [],
+    "StartingStatistics": [
+      {
+        "Name": "Level",
+        "Value": 1
+      },
+      {
+        "Name": "HP Current",
+        "Value": 30
+      },
+      {
+        "Name": "HP Max",
+        "Value": 30
+      },
+      {
+        "Name": "MP Current",
+        "Value": 10
+      },
+      {
+        "Name": "MP Max",
+        "Value": 10
+      },
+      {
+        "Name": "Experience",
+        "Value": 0
+      },
+      {
+        "Name": "Strength",
+        "Value": 1
+      },
+      {
+        "Name": "Speed",
+        "Value": 1
+      },
+      {
+        "Name": "Stamina",
+        "Value": 1
+      },
+      {
+        "Name": "Magic",
+        "Value": 1
+      },
+      {
+        "Name": "Attack",
+        "Value": 1
+      },
+      {
+        "Name": "Defense",
+        "Value": 1
+      },
+      {
+        "Name": "Evasion",
+        "Value": 1
+      },
+      {
+        "Name": "Magic Defense",
+        "Value": 1
+      },
+      {
+        "Name": "Magic Evasion",
+        "Value": 1
+      }
+    ]
+  },
+  {
+    "Name": "Black Mage",
+    "Agent": "Jrpg.SampleGame.Characters.JobClasses.BlackMage, Jrpg.SampleGame",
+    "Techniques": [
+      {
+        "Level": 1,
+        "Name": "Fire"
+      },
+      {
+        "Level": 10,
+        "Name": "Fira"
+      },
+      {
+        "Level": 30,
+        "Name": "Firaga"
+      }
+    ],
+    "StartingStatistics": [
+      {
+        "Name": "Level",
+        "Value": 1
+      },
+      {
+        "Name": "HP Current",
+        "Value": 30
+      },
+      {
+        "Name": "HP Max",
+        "Value": 30
+      },
+      {
+        "Name": "MP Current",
+        "Value": 10
+      },
+      {
+        "Name": "MP Max",
+        "Value": 10
+      },
+      {
+        "Name": "Experience",
+        "Value": 0
+      },
+      {
+        "Name": "Strength",
+        "Value": 1
+      },
+      {
+        "Name": "Speed",
+        "Value": 1
+      },
+      {
+        "Name": "Stamina",
+        "Value": 1
+      },
+      {
+        "Name": "Magic",
+        "Value": 1
+      },
+      {
+        "Name": "Attack",
+        "Value": 1
+      },
+      {
+        "Name": "Defense",
+        "Value": 1
+      },
+      {
+        "Name": "Evasion",
+        "Value": 1
+      },
+      {
+        "Name": "Magic Defense",
+        "Value": 1
+      },
+      {
+        "Name": "Magic Evasion",
+        "Value": 1
+      }
+    ]
+  },
+  {
+    "Name": "White Mage",
+    "Agent": "Jrpg.SampleGame.Characters.JobClasses.WhiteMage, Jrpg.SampleGame",
+    "Techniques": [
+      {
+        "Level": 10,
+        "Name": "Regen"
+      }
+    ],
+    "StartingStatistics": [
+      {
+        "Name": "Level",
+        "Value": 1
+      },
+      {
+        "Name": "HP Current",
+        "Value": 30
+      },
+      {
+        "Name": "HP Max",
+        "Value": 30
+      },
+      {
+        "Name": "MP Current",
+        "Value": 10
+      },
+      {
+        "Name": "MP Max",
+        "Value": 10
+      },
+      {
+        "Name": "Experience",
+        "Value": 0
+      },
+      {
+        "Name": "Strength",
+        "Value": 1
+      },
+      {
+        "Name": "Speed",
+        "Value": 1
+      },
+      {
+        "Name": "Stamina",
+        "Value": 1
+      },
+      {
+        "Name": "Magic",
+        "Value": 1
+      },
+      {
+        "Name": "Attack",
+        "Value": 1
+      },
+      {
+        "Name": "Defense",
+        "Value": 1
+      },
+      {
+        "Name": "Evasion",
+        "Value": 1
+      },
+      {
+        "Name": "Magic Defense",
+        "Value": 1
+      },
+      {
+        "Name": "Magic Evasion",
+        "Value": 1
+      }
+    ]
+  }
+]

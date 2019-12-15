@@ -1,8 +1,11 @@
 ﻿using System;
 using Jrpg.GameState;
+using Jrpg.CharacterSystem;
+using Jrpg.CharacterSystem.StatusEffects;
+
 using System.Collections.Generic;
 
-namespace Jrpg.CharacterSystem.StatusEffects.Effects
+namespace Jrpg.SampleGame.StatusEffects
 {
     class Mini : StatusEffect
     {
@@ -46,9 +49,9 @@ namespace Jrpg.CharacterSystem.StatusEffects.Effects
             character.Statistics = currentStats;
         }
 
-        public override StatusEffectType GetStatusEffectType()
+        public override string GetStatusEffectName()
         {
-            return StatusEffectType.Mini;
+            return "Mini";
         }
     }
 }

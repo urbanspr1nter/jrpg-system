@@ -8,8 +8,11 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.3.0-preview-20170628-02" />
-    <PackageReference Include="xunit" Version="2.2.0" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1"><IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+<PrivateAssets>all</PrivateAssets>
+</PackageReference>
+    <PackageReference Include="xunit.assert" Version="2.4.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,6 +22,7 @@
     <ProjectReference Include="..\Jrpg.PartySystem\Jrpg.PartySystem.csproj" />
     <ProjectReference Include="..\Jrpg.InventorySystem.Items.PublishHandlers\Jrpg.Items.PublishHandlers.csproj" />
     <ProjectReference Include="..\Jrpg.GameState\Jrpg.GameState.csproj" />
+    <ProjectReference Include="..\Jrpg.SampleGame\Jrpg.SampleGame.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Common\" />
@@ -29,6 +33,7 @@
     <None Remove="Resources\Monsters.json" />
     <None Remove="Resources\Prefixes.json" />
     <None Remove="Resources\Suffixes.json" />
+    <None Remove=".DS_Store" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\Items.json">
@@ -43,5 +48,16 @@
     <Content Include="Resources\Suffixes.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Resources\Techniques.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\CharacterClasses.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\StatusEffects.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>

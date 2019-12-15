@@ -1,0 +1,34 @@
+﻿[
+  {
+    "Id": "Tech_Fire",
+    "DisplayName": "Fire",
+    "MpCost": 10,
+    "AttackPower": 0,
+    "MagicPower": 5,
+    "Agent": "Jrpg.SampleGame.Techniques.Fire, Jrpg.SampleGame"
+  },
+  {
+    "Id": "Tech_Fira",
+    "DisplayName": "Fira",
+    "MpCost": 15,
+    "AttackPower": 0,
+    "MagicPower": 15,
+    "Agent": "Jrpg.SampleGame.Techniques.Fira, Jrpg.SampleGame"
+  },
+  {
+    "Id": "Tech_Firaga",
+    "DisplayName": "Firaga",
+    "MpCost": 30,
+    "AttackPower": 0,
+    "MagicPower": 45,
+    "Agent": "Jrpg.SampleGame.Techniques.Firaga, Jrpg.SampleGame"
+  },
+  {
+    "Id": "Tech_Regen",
+    "DisplayName": "Regen",
+    "MpCost": 18,
+    "AttackPower": 0,
+    "MagicPower": 45,
+    "Agent": "Jrpg.SampleGame.Techniques.Regen, Jrpg.SampleGame"
+  }
+]

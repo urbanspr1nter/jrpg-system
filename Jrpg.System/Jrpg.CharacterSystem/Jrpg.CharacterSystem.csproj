@@ -26,14 +26,16 @@
     <Folder Include="Classes\" />
     <Folder Include="Scalers\Freelancer\" />
     <Folder Include="StatusEffects\" />
-    <Folder Include="StatusEffects\Effects\" />
     <Folder Include="Techniques\" />
-    <Folder Include="Techniques\Concrete\" />
-    <Folder Include="Scalers\WhiteMage\" />
-    <Folder Include="Scalers\BlackMage\" />
+    <Folder Include="Classes\Definitions\" />
+    <Folder Include="StatusEffects\Definitions\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Jrpg.ItemComponents\Jrpg.ItemComponents.csproj" />
     <ProjectReference Include="..\Jrpg.GameState\Jrpg.GameState.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Bcl.HashCode" Version="1.1.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
 </Project>

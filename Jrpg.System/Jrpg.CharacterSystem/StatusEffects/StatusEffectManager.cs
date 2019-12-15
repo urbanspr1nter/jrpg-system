@@ -1,6 +1,7 @@
 ﻿using System;
 using Jrpg.GameState;
 using System.Collections.Generic;
+using Jrpg.CharacterSystem.StatusEffects.Definitions;
 
 namespace Jrpg.CharacterSystem.StatusEffects
 {
@@ -8,10 +9,17 @@ namespace Jrpg.CharacterSystem.StatusEffects
     {
         private GameStateValue _state;
         private Dictionary<Character, List<StatusEffect>> map;
+        private StatusEffectFactory factory;
 
         public StatusEffectManager()
         {
             map = new Dictionary<Character, List<StatusEffect>>();
+            factory = new StatusEffectFactory();
+        }
+
+        public void RegisterStatusEffect(string name, StatusEffectDefinition definition)
+        {
+            factory.Register(name, definition);
         }
 
         public void ReceiveStateUpdate(GameStateValue state)
@@ -19,7 +27,7 @@ namespace Jrpg.CharacterSystem.StatusEffects
             _state = state;
         }
 
-        public void ApplyEffect(Character character, StatusEffectType statusEffectType)
+        public void ApplyEffect(Character character, string name)
         {
             if(!map.ContainsKey(character))
             {
@@ -27,12 +35,12 @@ namespace Jrpg.CharacterSystem.StatusEffects
             }
 
             // Cannot stack status effects
-            if(map[character].Find(effect => effect.GetStatusEffectType() == statusEffectType) != null)
+            if(map[character].Find(effect => effect.GetStatusEffectName().Equals(name)) != null)
             {
                 return;
             }
 
-            var statusEffect = StatusEffectFactory.BuildStatusEffect(statusEffectType);
+            var statusEffect = factory.BuildStatusEffect(name);
             map[character].Add(statusEffect);
             statusEffect.OnApply(character, _state);
         }
@@ -70,7 +78,7 @@ namespace Jrpg.CharacterSystem.StatusEffects
             }
         }
 
-        public void RemoveEffect(Character character, StatusEffectType statusEffectType)
+        public void RemoveEffect(Character character, string statusEffectName)
         {
             if(!map.ContainsKey(character))
             {
@@ -80,7 +88,7 @@ namespace Jrpg.CharacterSystem.StatusEffects
             StatusEffect toRemove = null;
             foreach(var statusEffect in map[character])
             {
-                if(statusEffect.GetStatusEffectType() == statusEffectType)
+                if(statusEffect.GetStatusEffectName().Equals(statusEffectName))
                 {
                     toRemove = statusEffect;
                     break;
@@ -105,18 +113,18 @@ namespace Jrpg.CharacterSystem.StatusEffects
             }
         }
 
-        public List<StatusEffectType> StatusEffectTypes(Character character)
+        public List<string> StatusEffectNames(Character character)
         {
             if(!map.ContainsKey(character))
             {
-                return new List<StatusEffectType>();
+                return new List<string>();
             }
 
-            List<StatusEffectType> result = new List<StatusEffectType>();
+            List<string> result = new List<string>();
 
             foreach(var statusEffect in map[character])
             {
-                result.Add(statusEffect.GetStatusEffectType());
+                result.Add(statusEffect.GetStatusEffectName());
             }
 
             return result;

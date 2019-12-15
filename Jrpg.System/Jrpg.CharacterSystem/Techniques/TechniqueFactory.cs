@@ -1,6 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
 using Jrpg.CharacterSystem.StatusEffects;
-using Jrpg.CharacterSystem.Techniques.Concrete;
 
 namespace Jrpg.CharacterSystem.Techniques
 {
@@ -13,27 +13,35 @@ namespace Jrpg.CharacterSystem.Techniques
             StatusEffectManager = statusEffectManager;
         }
 
-        public Technique GetTech(TechniqueName name)
+        public Technique CreateTechnique(TechniqueDefinition definition)
         {
-            if (name == TechniqueName.Regen)
+            try
             {
-                return new Regen(StatusEffectManager);
-            }
-            else if (name == TechniqueName.Fire) {
-                return new Fire(StatusEffectManager);
-            }
-            else if(name == TechniqueName.Fira)
+                var instance = Activator.CreateInstance(
+                    Type.GetType(definition.Agent),
+                    new object[] { StatusEffectManager, definition }
+                );
+
+                return (Technique)(instance);
+            } catch(TypeLoadException e)
             {
-                return new Fira(StatusEffectManager);
+                Console.WriteLine("Couldn't load the technique");
+                throw e;
             }
-            else if (name == TechniqueName.Firaga)
+        }
+
+        public Dictionary<string, TechniqueDefinition> FromJsonDefinition(string json)
+        {
+            var definitions = Newtonsoft.Json.JsonConvert.DeserializeObject<List<TechniqueDefinition>>(json);
+
+            var results = new Dictionary<string, TechniqueDefinition>();
+
+            foreach(var definition in definitions)
             {
-                return new Firaga(StatusEffectManager);
+                results.Add(definition.DisplayName, definition);
             }
-            else
-            {
-                throw new NotSupportedException("No technique available to instantiate.");
-            }
+
+            return results;
         }
     }
 }
