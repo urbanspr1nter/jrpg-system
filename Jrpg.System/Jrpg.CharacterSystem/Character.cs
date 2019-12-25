@@ -45,7 +45,9 @@ namespace Jrpg.CharacterSystem
                 startingStats[statType].CurrentValue = DefaultValues[statType];
             }
 
-            currentClass = new Freelancer(startingStats);
+            currentClass = new Freelancer(startingStats,
+                new List<TechniqueDefinition>(),
+                new List<Classes.Definitions.ClassTechniqueDefinition>());
         }
 
         public Character(string name, BaseCharacterClass defaultJobClass)
@@ -90,7 +92,33 @@ namespace Jrpg.CharacterSystem
 
         public void ChangeClass(BaseCharacterClass jobClass)
         {
+            var currentLevel = currentClass.Statistics[StatisticType.Level].CurrentValue;
+            var currentExperience = currentClass.Statistics[StatisticType.Experience].CurrentValue;
+            var currentHp = currentClass.Statistics[StatisticType.HpCurrent].CurrentValue;
+            var currentMp = currentClass.Statistics[StatisticType.MpCurrent].CurrentValue;
+
             currentClass = jobClass;
+
+            for (var i = 1; i  < currentLevel; i++)
+            {
+                currentClass.LevelUp();
+            }
+
+            if(currentHp > currentClass.Statistics[StatisticType.HpMax].CurrentValue)
+            {
+                currentClass.Statistics[StatisticType.HpCurrent].CurrentValue =
+                    currentClass.Statistics[StatisticType.HpMax].CurrentValue;
+            }
+
+            if(currentMp > currentClass.Statistics[StatisticType.MpMax].CurrentValue)
+            {
+                currentClass.Statistics[StatisticType.MpCurrent].CurrentValue =
+                    currentClass.Statistics[StatisticType.MpMax].CurrentValue;
+            }
+
+            currentClass.Statistics[StatisticType.HpCurrent].CurrentValue = currentHp;
+            currentClass.Statistics[StatisticType.MpCurrent].CurrentValue = currentMp;
+            currentClass.Statistics[StatisticType.Experience].CurrentValue = currentExperience;
         }
 
         public string CurrentClassName()

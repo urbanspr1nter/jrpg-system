@@ -57,7 +57,7 @@ namespace Jrpg.CharacterSystem
             { StatisticType.Evasion, 255 },
             { StatisticType.MagicDefense, 255 },
             { StatisticType.MagicEvasion, 255 },
-            { StatisticType.Experience, 255 }
+            { StatisticType.Experience, 1000000 }
         };
 
         public static Dictionary<StatisticType, int> DefaultValues = new Dictionary<StatisticType, int>

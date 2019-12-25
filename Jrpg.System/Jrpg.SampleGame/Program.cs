@@ -19,34 +19,10 @@ namespace Jrpg.SampleGame
     {
         static void Main(string[] args)
         {
-            GameStore store = GameStore.GetInstance();
+            Store store = new Store();
 
-            store.LoadConfig(File.ReadAllText("Configuration.json"));
-
-            var ClassDefinitions = store.JobClassManager.FromJsonDefinition(
-                File.ReadAllText("Resources/CharacterClasses.json")
-            );
-            foreach(var className in ClassDefinitions.Keys)
-            {
-                store.JobClassManager.Register(className, ClassDefinitions[className]);
-            }
-
-
-            var StatusEffectDefinitions = Newtonsoft.Json.JsonConvert.DeserializeObject<List<StatusEffectDefinition>>(File.ReadAllText("Resources/StatusEffects.json"));
-            foreach(var definition in StatusEffectDefinitions)
-            {
-                store.StatusEffectManager.RegisterStatusEffect(definition.DisplayName, definition);
-            }
-
-            var TechniqueDefinitions = new TechniqueFactory(store.StatusEffectManager).FromJsonDefinition(File.ReadAllText("Resources/Techniques.json"));
-
-            var BlackMage = (BlackMage)store.JobClassManager.GetCharacterClassInstance("Black Mage");
-            BlackMage.TechniqueDefinitions.Add(TechniqueDefinitions["Fire"]);
-            BlackMage.TechniqueDefinitions.Add(TechniqueDefinitions["Fira"]);
-            BlackMage.TechniqueDefinitions.Add(TechniqueDefinitions["Firaga"]);
-
-            var WhiteMage = (WhiteMage)store.JobClassManager.GetCharacterClassInstance("White Mage");
-            WhiteMage.TechniqueDefinitions.Add(TechniqueDefinitions["Regen"]);
+            
+           
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Jrpg.CharacterSystem.Techniques;
 using Jrpg.CharacterSystem.Classes.Definitions;
 
 namespace Jrpg.CharacterSystem.Classes
@@ -7,10 +8,12 @@ namespace Jrpg.CharacterSystem.Classes
     public class ClassManager
     {
         private Dictionary<string, ClassDefinition> registered;
+        private Dictionary<string, TechniqueDefinition> techniqueDefinitions;
 
-        public ClassManager()
+        public ClassManager(Dictionary<string, TechniqueDefinition> techDefs)
         {
             registered = new Dictionary<string, ClassDefinition>();
+            techniqueDefinitions = techDefs;
         }
 
         public void Register(string tag, ClassDefinition classDefinition)
@@ -54,10 +57,18 @@ namespace Jrpg.CharacterSystem.Classes
                 jobClassStartingStatistics.Add(statisticType, statistic);
             }
 
+            List<ClassTechniqueDefinition> techniqueDefinitionMappings = classDefinition.Techniques;
+            List<TechniqueDefinition> techniqueDefinitionsForClass = new List<TechniqueDefinition>();
+                
+            foreach(var classTechniqueDefinition in techniqueDefinitionMappings)
+            {
+                techniqueDefinitionsForClass.Add(techniqueDefinitions[classTechniqueDefinition.Name]);
+            }
+
             var jobClassInstance = (BaseCharacterClass)Activator
                 .CreateInstance(
                 Type.GetType(jobClassAgent),
-                new object[] { jobClassStartingStatistics }
+                new object[] { jobClassStartingStatistics, techniqueDefinitionsForClass, techniqueDefinitionMappings }
             );
 
             return jobClassInstance;

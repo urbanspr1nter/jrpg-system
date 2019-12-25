@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Jrpg.CharacterSystem.Classes.Definitions;
 using Jrpg.CharacterSystem.Techniques;
 
 namespace Jrpg.CharacterSystem.Classes
@@ -7,12 +8,16 @@ namespace Jrpg.CharacterSystem.Classes
     public abstract class BaseCharacterClass : ICharacterClass
     {
         public Dictionary<StatisticType, Statistic> Statistics { get; set; }
+        public List<ClassTechniqueDefinition> TechniqueDefinitionMapping { get; }
         public List<TechniqueDefinition> TechniqueDefinitions { get; private set; }
 
-        public BaseCharacterClass(Dictionary<StatisticType, Statistic> statistics)
+        public BaseCharacterClass(Dictionary<StatisticType, Statistic> statistics,
+            List<TechniqueDefinition> techniqueDefinitions,
+            List<ClassTechniqueDefinition> techniqueDefinitionMapping)
         {
             Statistics = statistics;
-            TechniqueDefinitions = new List<TechniqueDefinition>();
+            TechniqueDefinitions = techniqueDefinitions;
+            TechniqueDefinitionMapping = techniqueDefinitionMapping;
         }
 
         public virtual void LevelUp()

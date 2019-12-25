@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using Jrpg.CharacterSystem.Scalers;
 using Jrpg.CharacterSystem.Scalers.Freelancer;
+using Jrpg.CharacterSystem.Techniques;
+using Jrpg.CharacterSystem.Classes.Definitions;
 
 namespace Jrpg.CharacterSystem.Classes
 {
@@ -19,7 +21,10 @@ namespace Jrpg.CharacterSystem.Classes
         private IStatisticScaler magicDefenseScaler;
         private IStatisticScaler magicEvasionScaler;
 
-        public Freelancer(Dictionary<StatisticType, Statistic> statistics) : base(statistics)
+        public Freelancer(Dictionary<StatisticType, Statistic> statistics,
+            List<TechniqueDefinition> techniqueDefinitions,
+            List<ClassTechniqueDefinition> techniqueDefinitionMapping)
+            : base(statistics, techniqueDefinitions, techniqueDefinitionMapping)
         {
             hpScaler = new HpScaler();
             mpScaler = new MpScaler();

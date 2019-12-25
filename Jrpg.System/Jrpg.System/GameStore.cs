@@ -5,6 +5,7 @@ using Jrpg.InventorySystem;
 using Jrpg.GameState;
 using Jrpg.CharacterSystem.StatusEffects;
 using Jrpg.CharacterSystem.Classes;
+using Jrpg.CharacterSystem.Techniques;
 
 namespace Jrpg.System
 {
@@ -28,8 +29,13 @@ namespace Jrpg.System
             MainParty = new Party(InventoryManager);
             GameStateManager = new GameStateManager(GameStateValue.Title);
             StatusEffectManager = new StatusEffectManager();
-            JobClassManager = new ClassManager();
+            JobClassManager = new ClassManager(new Dictionary<string, TechniqueDefinition>());
             DataStore = new Dictionary<string, object>();
+        }
+
+        public void LoadTechniqueDefinitions(Dictionary<string, TechniqueDefinition> techDefs)
+        {
+            JobClassManager = new ClassManager(techDefs);
         }
 
         public void SubscribeToGameState(IGameStateSubscriber subscriber)

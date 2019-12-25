@@ -23,8 +23,9 @@ namespace Jrpg.System.Tests
         {
             gameStateManager = new GameStateManager(GameStateValue.World);
             StatusEffectManager = new StatusEffectManager();
+            var TechniqueDefinitions = new TechniqueFactory(StatusEffectManager).FromJsonDefinition(File.ReadAllText("Resources/Techniques.json"));
 
-            ClassManager = new ClassManager();
+            ClassManager = new ClassManager(TechniqueDefinitions);
             var ClassDefinitions = ClassManager.FromJsonDefinition(
                 File.ReadAllText("Resources/CharacterClasses.json")
             );
@@ -39,16 +40,9 @@ namespace Jrpg.System.Tests
                 StatusEffectManager.RegisterStatusEffect(definition.DisplayName, definition);
             }
 
-            var TechniqueDefinitions = new TechniqueFactory(StatusEffectManager).FromJsonDefinition(File.ReadAllText("Resources/Techniques.json"));
-
 
             BlackMage = (BlackMage)ClassManager.GetCharacterClassInstance("Black Mage");
-            BlackMage.TechniqueDefinitions.Add(TechniqueDefinitions["Fire"]);
-            BlackMage.TechniqueDefinitions.Add(TechniqueDefinitions["Fira"]);
-            BlackMage.TechniqueDefinitions.Add(TechniqueDefinitions["Firaga"]);
-
             WhiteMage = (WhiteMage)ClassManager.GetCharacterClassInstance("White Mage");
-            WhiteMage.TechniqueDefinitions.Add(TechniqueDefinitions["Regen"]);
 
             gameStateManager.Register(StatusEffectManager);
         }
