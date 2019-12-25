@@ -169,16 +169,26 @@ namespace Jrpg.System.Tests
             party.SetActiveCharacter("Cloud");
 
             var cloud = party.GetMember("Cloud");
+            while (cloud.Statistics[StatisticType.Level].CurrentValue < 11)
+            {
+                cloud.AddExperience(100);
+            }
 
             cloud.ChangeClass(gameLoop.WhiteMage);
+            Assert.True(cloud.CanUseTechnique("Regen"));
+            Assert.False(cloud.CanUseTechnique("Fire"));
+            Assert.False(cloud.CanUseTechnique("Fira"));
+            Assert.False(cloud.CanUseTechnique("Firaga"));
 
-            Assert.True(cloud.TechniqueDefinitions().Exists(t => t.Equals("Regen")));
-            Assert.False(cloud.TechniqueDefinitions().Exists(t => t.Equals("Fire")));
 
             cloud.ChangeClass(gameLoop.BlackMage);
+            Assert.False(cloud.CanUseTechnique("Regen"));
+            Assert.True(cloud.CanUseTechnique("Fire"));
+            Assert.True(cloud.CanUseTechnique("Fira"));
+            Assert.False(cloud.CanUseTechnique("Firaga"));
 
-            Assert.False(cloud.TechniqueDefinitions().Exists(t => t.Equals("Regen")));
-            Assert.True(cloud.TechniqueDefinitions().Exists(t => t.Equals("Fire")));
+            cloud.AddExperience(100000);
+            Assert.True(cloud.CanUseTechnique("Firaga"));
         }
 
         private void PrintStatistics(Character character)

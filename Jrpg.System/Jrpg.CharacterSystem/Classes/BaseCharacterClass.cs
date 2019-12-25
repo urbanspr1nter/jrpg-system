@@ -8,7 +8,7 @@ namespace Jrpg.CharacterSystem.Classes
     public abstract class BaseCharacterClass : ICharacterClass
     {
         public Dictionary<StatisticType, Statistic> Statistics { get; set; }
-        public List<ClassTechniqueDefinition> TechniqueDefinitionMapping { get; }
+        public List<ClassTechniqueDefinition> TechniqueDefinitionMapping { get; private set; }
         public List<TechniqueDefinition> TechniqueDefinitions { get; private set; }
 
         public BaseCharacterClass(Dictionary<StatisticType, Statistic> statistics,

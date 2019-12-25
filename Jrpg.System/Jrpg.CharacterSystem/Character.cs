@@ -57,6 +57,15 @@ namespace Jrpg.CharacterSystem
             currentClass = defaultJobClass;
         }
 
+        public bool CanUseTechnique(string techniqueName)
+        {
+            var techniqueDef = currentClass.TechniqueDefinitionMapping.Find(def => def.Name.Equals(techniqueName));
+
+            if (techniqueDef == null || techniqueDef.Level > Statistics[StatisticType.Level].CurrentValue)
+                return false;
+            return true;
+        }
+
         public void UseTechnique(TechniqueName name, StatusEffectManager statusEffectManager, List<Character> targets)
         {
             var techniqueDefinition = currentClass.TechniqueDefinitions.Find(t => t.DisplayName.Equals(name.Name));
