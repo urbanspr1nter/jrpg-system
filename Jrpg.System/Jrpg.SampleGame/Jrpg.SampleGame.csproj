@@ -9,6 +9,11 @@
     <ProjectReference Include="..\Jrpg.System\Jrpg.System.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <None Remove="Resources\Items.json" />
+    <None Remove="Resources\Prefixes.json" />
+    <None Remove="Resources\Suffixes.json" />
+  </ItemGroup>
+  <ItemGroup>
     <None Update="Configuration.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -21,6 +26,12 @@
     <None Update="Resources\StatusEffects.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Resources\Monsters.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\EnemyClasses.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -31,5 +42,20 @@
     <Folder Include="Characters\Scalers\WhiteMage\" />
     <Folder Include="Characters\Scalers\BlackMage\" />
     <Folder Include="StatusEffects\" />
+    <Folder Include="Characters\Enemies\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Items.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Prefixes.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Suffixes.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 </Project>

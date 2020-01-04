@@ -6,7 +6,7 @@ namespace Jrpg.CharacterSystem.Classes.Definitions
     {
         public string Name { get; set; }
         public string Agent { get; set; }
-        public List<ClassTechniqueDefinition> Techniques;
+        public List<ClassTechniqueDefinition> Techniques = new List<ClassTechniqueDefinition>();
         public List<ClassStatistic> StartingStatistics;
     }
 }

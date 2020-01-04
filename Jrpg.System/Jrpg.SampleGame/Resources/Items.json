@@ -1,0 +1,39 @@
+﻿[
+  {
+    "Name": "NoDrop",
+    "ItemClass": [],
+    "Properties": [],
+    "Value": 0,
+    "BodyPart": "Default"
+  },
+  {
+    "Name": "Tonic",
+    "ItemClass": [],
+    "Properties": [
+      {
+        "Name": "HP Current",
+        "Value": 10
+      }
+    ],
+    "Value": 200,
+    "BodyPart": "Default"
+  },
+  {
+    "Name": "Rotten Fish",
+    "ItemClass": [],
+    "Properties": [],
+    "Value": 10000,
+    "BodyPart": "Default",
+    "IsKeyItem": true,
+    "PublishHandler": "PoisonHandler, Assembly-CSharp"
+  },
+  {
+    "Name": "Antidote",
+    "ItemClass": [],
+    "Properties": [],
+    "Value": 200,
+    "BodyPart": "Default",
+    "IsKeyItem": true,
+    "PublishHandler": "AntidoteHandler, Assembly-CSharp"
+  }
+]

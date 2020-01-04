@@ -6,6 +6,8 @@ using Jrpg.GameState;
 using Jrpg.CharacterSystem.StatusEffects;
 using Jrpg.CharacterSystem.Classes;
 using Jrpg.CharacterSystem.Techniques;
+using Jrpg.BattleSystem.Enemies;
+using Jrpg.InventorySystem.PgItems;
 
 namespace Jrpg.System
 {
@@ -20,6 +22,7 @@ namespace Jrpg.System
         public Party MainParty { get; private set; }
         public StatusEffectManager StatusEffectManager { get; private set; }
         public ClassManager JobClassManager { get; private set; }
+        public EnemyManager EnemyManager { get; private set; }
 
         public Dictionary<string, object> DataStore { get; }
 
@@ -33,9 +36,10 @@ namespace Jrpg.System
             DataStore = new Dictionary<string, object>();
         }
 
-        public void LoadTechniqueDefinitions(Dictionary<string, TechniqueDefinition> techDefs)
+        public void InitializeManagers(Dictionary<string, TechniqueDefinition> techDefs, List<Item> items, List<Affix> prefixes, List<Affix> suffixes)
         {
             JobClassManager = new ClassManager(techDefs);
+            EnemyManager = new EnemyManager(techDefs, new ItemGenerator(items, prefixes, suffixes));
         }
 
         public void SubscribeToGameState(IGameStateSubscriber subscriber)

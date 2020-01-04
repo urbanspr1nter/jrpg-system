@@ -22,7 +22,7 @@ namespace Jrpg.CharacterSystem
             }
         }
 
-        private BaseCharacterClass currentClass;
+        protected BaseCharacterClass currentClass;
 
         private int _nextExpLimit;
         public int ExperienceForNextLevel {
@@ -86,7 +86,7 @@ namespace Jrpg.CharacterSystem
             return (int)((4 * Math.Pow(currentLevel, 3)) / 5);
         }
 
-        public bool AddExperience(int experience)
+        public virtual bool AddExperience(int experience)
         {
             Statistics[StatisticType.Experience].CurrentValue += experience;
 
@@ -99,7 +99,7 @@ namespace Jrpg.CharacterSystem
             return result;
         }
 
-        public void ChangeClass(BaseCharacterClass jobClass)
+        public virtual void ChangeClass(BaseCharacterClass jobClass)
         {
             var currentLevel = currentClass.Statistics[StatisticType.Level].CurrentValue;
             var currentExperience = currentClass.Statistics[StatisticType.Experience].CurrentValue;

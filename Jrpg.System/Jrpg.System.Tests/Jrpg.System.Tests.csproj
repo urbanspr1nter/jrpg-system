@@ -22,6 +22,7 @@
     <ProjectReference Include="..\Jrpg.InventorySystem.Items.PublishHandlers\Jrpg.Items.PublishHandlers.csproj" />
     <ProjectReference Include="..\Jrpg.GameState\Jrpg.GameState.csproj" />
     <ProjectReference Include="..\Jrpg.SampleGame\Jrpg.SampleGame.csproj" />
+    <ProjectReference Include="..\Jrpg.BattleSystem\Jrpg.BattleSystem.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Common\" />
@@ -56,6 +57,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Resources\StatusEffects.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Enemies.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

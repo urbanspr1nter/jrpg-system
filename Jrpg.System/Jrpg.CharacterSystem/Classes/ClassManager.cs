@@ -68,7 +68,11 @@ namespace Jrpg.CharacterSystem.Classes
             var jobClassInstance = (BaseCharacterClass)Activator
                 .CreateInstance(
                 Type.GetType(jobClassAgent),
-                new object[] { jobClassStartingStatistics, techniqueDefinitionsForClass, techniqueDefinitionMappings }
+                new object[] {
+                    jobClassStartingStatistics,
+                    techniqueDefinitionsForClass,
+                    techniqueDefinitionMappings
+                }
             );
 
             return jobClassInstance;

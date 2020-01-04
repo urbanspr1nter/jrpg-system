@@ -1,0 +1,83 @@
+﻿[
+  {
+    "Id": "Basic Goblin",
+    "Name": "Basic Goblin",
+    "Agent": "Jrpg.SampleGame.Characters.Enemies.GoblinClass, Jrpg.SampleGame",
+    "Elemental": "Normal",
+    "StartingStatistics": [
+      {
+        "Name": "Level",
+        "Value": 1
+      },
+      {
+        "Name": "HP Current",
+        "Value": 30
+      },
+      {
+        "Name": "HP Max",
+        "Value": 30
+      },
+      {
+        "Name": "MP Current",
+        "Value": 10
+      },
+      {
+        "Name": "MP Max",
+        "Value": 10
+      },
+      {
+        "Name": "Experience",
+        "Value": 0
+      },
+      {
+        "Name": "Strength",
+        "Value": 1
+      },
+      {
+        "Name": "Speed",
+        "Value": 1
+      },
+      {
+        "Name": "Stamina",
+        "Value": 1
+      },
+      {
+        "Name": "Magic",
+        "Value": 1
+      },
+      {
+        "Name": "Attack",
+        "Value": 1
+      },
+      {
+        "Name": "Defense",
+        "Value": 1
+      },
+      {
+        "Name": "Evasion",
+        "Value": 1
+      },
+      {
+        "Name": "Magic Defense",
+        "Value": 1
+      },
+      {
+        "Name": "Magic Evasion",
+        "Value": 1
+      }
+    ],
+    "Techniques": [],
+    "ItemClass": [
+      {
+        "Name": "Tonic",
+        "Weight": 10
+      },
+      {
+        "Name": "Antidote",
+        "Weight":  5
+      }
+    ],
+    "Gold": 25,
+    "Experience": 10
+  }
+]

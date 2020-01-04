@@ -8,10 +8,14 @@ using System;
 using System.Reflection;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading;
 using Jrpg.System;
+using Jrpg.CharacterSystem;
 using Jrpg.CharacterSystem.StatusEffects.Definitions;
 using Jrpg.SampleGame.Characters.JobClasses;
 using Jrpg.CharacterSystem.Techniques;
+using Jrpg.BattleSystem.Enemies;
+using Jrpg.InventorySystem.PgItems;
 
 namespace Jrpg.SampleGame
 {
@@ -21,8 +25,15 @@ namespace Jrpg.SampleGame
         {
             Store store = new Store();
 
-            
-           
+
+            Enemy Imp = store.Game.EnemyManager.GetEnemyInstance("Imp", "Basic Goblin");
+
+            for(int i = 100; i < 125; i ++)
+            {
+                Thread.Sleep(1000);
+                Console.WriteLine($"{i}. {Imp.Name}, {Imp.GetItem().Name}");
+            }
+
         }
     }
 }
