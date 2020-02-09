@@ -83,11 +83,11 @@ namespace Jrpg.BattleSystem.Enemies
             return enemyClass;
         }
 
-        public void FromJsonDefinition(string filename)
+        public void FromJsonDefinition(string json)
         {
             List<EnemyDefinition> loaded
                 = Newtonsoft.Json.JsonConvert.DeserializeObject<List<EnemyDefinition>>
-                    (File.ReadAllText(filename));
+                    (json);
 
             foreach(var enemy in loaded)
             {

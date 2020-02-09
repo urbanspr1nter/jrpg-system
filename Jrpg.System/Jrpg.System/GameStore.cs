@@ -64,14 +64,22 @@ namespace Jrpg.System
 
         public void Put<T>(string key, T value)
         {
-            DataStore.Add(key, value);
+            if (!DataStore.ContainsKey(key))
+            {
+                DataStore.Add(key, null);
+            }
+
+            if (DataStore.ContainsKey(key))
+                DataStore[key] = value;
+            else
+                DataStore.Add(key, value);
         }
 
         public T Get<T>(string key)
         {
             if(!DataStore.ContainsKey(key))
             {
-                throw new NullReferenceException("Key does not exist in Data Store.");
+                return default(T);
             }
 
             return (T)DataStore[key];

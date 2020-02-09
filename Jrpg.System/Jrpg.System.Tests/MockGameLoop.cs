@@ -110,8 +110,11 @@ namespace Jrpg.System.Tests
             var mockSuffixDefs = new List<Affix>() { noSuffix };
 
             EnemyManager
-                = new EnemyManager(techDefs, new ItemGenerator(mockItemDefs, mockPrefixDefs, mockSuffixDefs));
-            EnemyManager.FromJsonDefinition("Resources/Enemies.json");
+                = new EnemyManager(
+                    techDefs,
+                    new ItemGenerator(mockItemDefs, mockPrefixDefs, mockSuffixDefs)
+                );
+            EnemyManager.FromJsonDefinition(File.ReadAllText("Resources/Enemies.json"));
         }
 
         public void SetGameState(GameStateValue state)
