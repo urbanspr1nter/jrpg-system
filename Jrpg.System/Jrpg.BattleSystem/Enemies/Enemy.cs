@@ -61,11 +61,6 @@ namespace Jrpg.BattleSystem.Enemies
                 NotImplementedException("Cannot change the class assigned to the Enemy.");
         }
 
-        public bool IsAlive()
-        {
-            return Statistics[StatisticType.HpCurrent].CurrentValue > 0;
-        }
-
         public int Gold()
         {
             return ((EnemyClass)currentClass).Gold;
