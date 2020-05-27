@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Jrpg.MenuSystem\Jrpg.MenuSystem.csproj" />
     <ProjectReference Include="..\Jrpg.System\Jrpg.System.csproj" />
   </ItemGroup>
   <ItemGroup>

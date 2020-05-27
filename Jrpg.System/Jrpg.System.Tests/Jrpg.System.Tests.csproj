@@ -18,6 +18,7 @@
     <ProjectReference Include="..\Jrpg.CharacterSystem\Jrpg.CharacterSystem.csproj" />
     <ProjectReference Include="..\Jrpg.InventorySystem\Jrpg.InventorySystem.csproj" />
     <ProjectReference Include="..\Jrpg.ItemComponents\Jrpg.ItemComponents.csproj" />
+    <ProjectReference Include="..\Jrpg.MenuSystem\Jrpg.MenuSystem.csproj" />
     <ProjectReference Include="..\Jrpg.PartySystem\Jrpg.PartySystem.csproj" />
     <ProjectReference Include="..\Jrpg.InventorySystem.Items.PublishHandlers\Jrpg.Items.PublishHandlers.csproj" />
     <ProjectReference Include="..\Jrpg.GameState\Jrpg.GameState.csproj" />
