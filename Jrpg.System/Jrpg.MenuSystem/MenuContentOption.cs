@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Text;
 using Jrpg.System;
-using UnityEngine;
 
 namespace Jrpg.MenuSystem
 {
@@ -27,11 +26,6 @@ namespace Jrpg.MenuSystem
 
             // Now, handle
             handler.Handle(this.gameStore);
-        }
-
-        public override void Render(MonoBehaviour mono)
-        {
-            throw new NetStandardSystem.NotImplementedException();
         }
     }
 }

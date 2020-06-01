@@ -1,6 +1,5 @@
 ﻿using System;
 using Jrpg.System;
-using UnityEngine;
 
 namespace Jrpg.MenuSystem
 {
@@ -11,11 +10,6 @@ namespace Jrpg.MenuSystem
         public MenuContentText(GameStore g) : base(g)
         {
             Type = MenuContentType.Text;
-        }
-
-        public override void Render(MonoBehaviour mono)
-        {
-            throw new NotImplementedException();
         }
     }
 }

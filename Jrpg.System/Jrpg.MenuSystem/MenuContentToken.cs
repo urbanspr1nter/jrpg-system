@@ -1,7 +1,6 @@
 ﻿using NetStandardSystem = System;
 using System.Collections.Generic;
 using Jrpg.System;
-using UnityEngine;
 
 namespace Jrpg.MenuSystem
 {
@@ -26,11 +25,6 @@ namespace Jrpg.MenuSystem
 
                 Content = Content.Replace(replaceHandler.Token, replaceHandler.Replace(this.gameStore));
             }
-        }
-
-        public override void Render(MonoBehaviour mono)
-        {
-            throw new NetStandardSystem.NotImplementedException();
         }
     }
 }

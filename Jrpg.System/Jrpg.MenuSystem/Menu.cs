@@ -79,10 +79,5 @@ namespace Jrpg.MenuSystem
             }
             return sb.ToString();
         }
-
-        public void Render()
-        {
-            Console.WriteLine($"Rendering {Key}");
-        }
     }
 }

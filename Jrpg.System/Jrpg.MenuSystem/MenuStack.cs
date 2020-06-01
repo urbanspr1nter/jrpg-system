@@ -46,14 +46,5 @@ namespace Jrpg.MenuSystem
         {
             return Menus.Count;
         }
-
-        public void Render()
-        {
-            foreach(var m in Menus)
-            {
-                Console.WriteLine($"Rendering menu {m.Key} at {m.Location}, and size {m.Size}");
-                m.Render();
-            }
-        }
     }
 }

@@ -17,8 +17,5 @@ namespace Jrpg.MenuSystem
         public MenuSize Size { get; set; }
 
         public TilePoint Location { get; set; }
-
-        /* Must Override */
-        public abstract void Render(MonoBehaviour mono);
     }
 }
