@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Jrpg.MenuSystem
@@ -34,6 +35,11 @@ namespace Jrpg.MenuSystem
         public MenuContent GetContent(string key)
         {
             return Contents[key];
+        }
+
+        public List<string> Keys()
+        {
+            return Contents.Keys.ToList();
         }
 
         public string DebugRender()

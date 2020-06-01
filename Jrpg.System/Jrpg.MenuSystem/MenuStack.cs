@@ -37,6 +37,11 @@ namespace Jrpg.MenuSystem
             return Menus.Select(m => m.Key).ToList();
         }
 
+        public Menu Get(string key)
+        {
+            return Menus.Where(m => m.Key.Equals(key)).FirstOrDefault();
+        }
+
         public int Count()
         {
             return Menus.Count;
