@@ -9,5 +9,10 @@ namespace Jrpg.MenuSystem
     {
         public string Token { get; set; }
         public abstract string Replace(GameStore g);
+
+        public MenuContentTokenReplacer(string token)
+        {
+            Token = token;
+        }
     }
 }

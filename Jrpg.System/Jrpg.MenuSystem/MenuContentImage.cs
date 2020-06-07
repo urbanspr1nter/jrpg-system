@@ -7,6 +7,8 @@ namespace Jrpg.MenuSystem
     {
         public string Content { get; set; }
 
-        public MenuContentImage(GameStore g) : base(g) { }
+        public MenuContentImage(GameStore g) : base(g) {
+            Type = MenuContentType.Image;
+        }
     }
 }
