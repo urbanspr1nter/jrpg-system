@@ -7,12 +7,14 @@ namespace Jrpg.MenuSystem
         private Dictionary<string, Menu> Menus;
         private Stack<string> KeyStack;
         private int ValuesIndex;
+        public Cursor Pointer { get; private set; }
 
         public MenuStack()
         {
             Menus = new Dictionary<string, Menu>();
             KeyStack = new Stack<string>();
             ValuesIndex = 0;
+            Pointer = new Cursor(this);
         }
 
         public Menu Peek()
@@ -24,6 +26,21 @@ namespace Jrpg.MenuSystem
         {
             Menus.Add(m.Key, m);
             KeyStack.Push(m.Key);
+
+            // If has a OPTION type, then the cursor should be visible by deafult
+            var hasOption = false;
+            foreach(var key in m.Keys())
+            {
+                MenuContent mc = m.GetContent(key);
+                if (mc.Type == MenuContentType.Option)
+                    hasOption = true;
+            }
+
+            Pointer.Push(new MenuContentMemory {
+                Index = 0,
+                MenuKey = m.Key,
+                Visible = hasOption
+            });
         }
 
         public Menu Pop()
@@ -33,6 +50,7 @@ namespace Jrpg.MenuSystem
             var menu = Menus[key];
 
             Menus.Remove(key);
+            Pointer.Pop();
 
             return menu;
         }

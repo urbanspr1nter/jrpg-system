@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Jrpg.MenuSystem
+﻿namespace Jrpg.MenuSystem
 {
     public class MenuContentMemory
     {
-        public string Key { get; set; }
+        public string MenuKey { get; set; }
+        public int Index { get; set; }
+        public bool Visible { get; set; }
     }
 }
