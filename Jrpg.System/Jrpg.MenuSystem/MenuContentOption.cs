@@ -18,14 +18,21 @@ namespace Jrpg.MenuSystem
 
         public void Handle()
         {
-            MenuContentOptionHandler handler =
-                (MenuContentOptionHandler)NetStandardSystem.Activator.CreateInstance(
-                    NetStandardSystem.Type.GetType(Handler), 
-                    new object[] { }
-                );
+            try
+            {
+                MenuContentOptionHandler handler =
+                    (MenuContentOptionHandler)NetStandardSystem.Activator.CreateInstance(
+                        NetStandardSystem.Type.GetType(Handler),
+                        new object[] { }
+                    );
 
-            // Now, handle
-            handler.Handle(this.gameStore);
+                // Now, handle
+                handler.Handle(this.gameStore);
+            } catch
+            {
+
+            }
+
         }
     }
 }

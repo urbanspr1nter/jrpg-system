@@ -1,6 +1,7 @@
 ﻿using NetStandardSystem = System;
 using System.Collections.Generic;
 using Jrpg.System;
+using System;
 
 namespace Jrpg.MenuSystem
 {
@@ -30,13 +31,21 @@ namespace Jrpg.MenuSystem
         {
             foreach(var replacer in Replacers)
             {
-                MenuContentTokenReplacer replaceHandler =
-                    (MenuContentTokenReplacer)NetStandardSystem.Activator.CreateInstance(
-                        NetStandardSystem.Type.GetType(replacer.Agent),
-                        new object[] { replacer.Token }
-                    );
+                try
+                {
+                    MenuContentTokenReplacer replaceHandler =
+                        (MenuContentTokenReplacer)NetStandardSystem.Activator.CreateInstance(
+                            NetStandardSystem.Type.GetType(replacer.Agent),
+                            new object[] { replacer.Token }
+                        );
 
-                Content = Content.Replace(replaceHandler.Token, replaceHandler.Replace(this.gameStore));
+                    Content = Content.Replace(replaceHandler.Token, replaceHandler.Replace(this.gameStore));
+                }
+                catch
+                {
+                    Console.WriteLine($"Invalid replacer {replacer.Agent} for token {replacer.Token}");
+                }
+
             }
         }
     }
