@@ -8,4 +8,8 @@
     <ProjectReference Include="..\Jrpg.System\Jrpg.System.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Components\" />
+    <Folder Include="Components\Replacers\" />
+  </ItemGroup>
 </Project>

@@ -15,9 +15,10 @@ namespace Jrpg.SampleGame.Characters.Enemies
             List<TechniqueDefinition> techniqueDefinitions,
             List<ClassTechniqueDefinition> techniqueDefinitionMapping,
             List<ItemClassEdge> itemClasses,
+            Proximity proximity,
             int gold,
             int experience
-        ) : base(statistics, techniqueDefinitions, techniqueDefinitionMapping, itemClasses, gold, experience)
+        ) : base(statistics, techniqueDefinitions, techniqueDefinitionMapping, itemClasses, proximity, gold, experience)
         {
 
         }

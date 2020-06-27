@@ -13,7 +13,8 @@ namespace Jrpg.CharacterSystem.Classes
 
         public BaseCharacterClass(Dictionary<StatisticType, Statistic> statistics,
             List<TechniqueDefinition> techniqueDefinitions,
-            List<ClassTechniqueDefinition> techniqueDefinitionMapping)
+            List<ClassTechniqueDefinition> techniqueDefinitionMapping
+        )
         {
             Statistics = statistics;
             TechniqueDefinitions = techniqueDefinitions;

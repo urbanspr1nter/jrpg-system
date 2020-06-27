@@ -10,7 +10,14 @@ namespace Jrpg.BattleSystem.Enemies.Definitions
         public string Id { get; set; }
         public string Elemental { get; set; }
         public List<ItemClassEdge> ItemClass { get; set; }
+        public Proximity Proximity { get; set; }
         public int Gold { get; set; }
         public int Experience { get; set; }
+
+        public EnemyDefinition()
+        {
+            ItemClass = new List<ItemClassEdge>();
+            Proximity = new Proximity();
+        }
     }
 }

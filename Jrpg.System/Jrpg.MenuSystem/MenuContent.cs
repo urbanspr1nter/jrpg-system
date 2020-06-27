@@ -1,5 +1,4 @@
 ﻿using Jrpg.System;
-using UnityEngine;
 
 namespace Jrpg.MenuSystem
 {

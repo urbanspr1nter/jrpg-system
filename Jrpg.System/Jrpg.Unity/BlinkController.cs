@@ -35,7 +35,7 @@ namespace Jrpg.Unity
             FrameTime += Time.fixedDeltaTime;
         }
 
-        private void Reset()
+        public void Reset()
         {
             Renderer.forceRenderingOff = false;
             Renderer.color = OriginalColor;

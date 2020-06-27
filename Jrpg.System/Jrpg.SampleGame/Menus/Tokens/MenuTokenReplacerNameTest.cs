@@ -5,7 +5,7 @@ namespace Jrpg.SampleGame.Menus.Tokens
 {
     public class MenuTokenReplacerNameTest : MenuContentTokenReplacer
     {
-        public MenuTokenReplacerNameTest() : base()
+        public MenuTokenReplacerNameTest() : base("")
         {
             Token = "$NAME$";
         }

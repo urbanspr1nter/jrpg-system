@@ -76,6 +76,7 @@ namespace Jrpg.BattleSystem.Enemies
                 techniqueDefinitionsForEnemy,
                 techniqueDefinitionMapping,
                 enemyDefinition.ItemClass,
+                enemyDefinition.Proximity,
                 enemyDefinition.Gold,
                 enemyDefinition.Experience
             }));

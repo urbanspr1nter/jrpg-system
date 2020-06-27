@@ -10,6 +10,7 @@ namespace Jrpg.BattleSystem.Enemies
 {
     public abstract class EnemyClass : BaseCharacterClass
     {
+        public Proximity Proximity { get; private set; }
         public int Gold { get; private set; }
         public int Experience { get; private set; }
         public List<ItemClassEdge> ItemClasses { get; private set; }
@@ -19,6 +20,7 @@ namespace Jrpg.BattleSystem.Enemies
             List<TechniqueDefinition> techniqueDefinitions,
             List<ClassTechniqueDefinition> techniqueDefinitionMapping,
             List<ItemClassEdge> itemClasses,
+            Proximity proximity,
             int gold,
             int experience
         )
@@ -27,6 +29,7 @@ namespace Jrpg.BattleSystem.Enemies
             Gold = gold;
             Experience = experience;
             ItemClasses = itemClasses;
+            Proximity = proximity;
         }
 
 

@@ -8,4 +8,12 @@
     <PackageReference Include="Unity3D.SDK" Version="2019.3.13.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Jrpg.BattleSystem\Jrpg.BattleSystem.csproj" />
+    <ProjectReference Include="..\Jrpg.System\Jrpg.System.csproj" />
+    <ProjectReference Include="..\Jrpg.MenuSystem\Jrpg.MenuSystem.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Menus\" />
+  </ItemGroup>
 </Project>

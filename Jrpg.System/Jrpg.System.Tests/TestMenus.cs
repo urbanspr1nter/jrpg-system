@@ -56,7 +56,13 @@ namespace Jrpg.System.Tests
             };
 
             Assert.Equal(keys.Count, menuStack.Count());
-            Assert.All(menuStack.Keys(), key => keys.Contains(key));
+
+            int i = 0;
+            while(menuStack.HasNext())
+            {
+                Assert.Equal(menuStack.Next().Key, keys[i]);
+                i++;
+            }
         }
 
         [Fact]
@@ -101,9 +107,13 @@ namespace Jrpg.System.Tests
             mcLine1.Size = new MenuSize(line1.Length, 1);
             mcLine1.Content = line1;
             mcLine1.Location = new TilePoint(1, 1);
-            mcLine1.Replacers = new List<string> {
-                "Jrpg.SampleGame.Menus.Tokens.MenuTokenReplacerNameTest, Jrpg.SampleGame",
-                "Jrpg.SampleGame.Menus.Tokens.MenuTokenReplacerFoodTest, Jrpg.SampleGame"
+
+            var replacer1 = new MenuContentToken.MenuContentTokenReplacementDefinition("$FOOD$", "Jrpg.SampleGame.Menus.Tokens.MenuTokenReplacerFoodTest, Jrpg.SampleGame");
+            var replacer2 = new MenuContentToken.MenuContentTokenReplacementDefinition("$NAME$", "Jrpg.SampleGame.Menus.Tokens.MenuTokenReplacerNameTest, Jrpg.SampleGame");
+
+            mcLine1.Replacers = new List<MenuContentToken.MenuContentTokenReplacementDefinition> {
+                replacer1,
+                replacer2
             };
             mcLine1.Replace();
 

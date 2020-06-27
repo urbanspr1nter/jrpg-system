@@ -2,6 +2,7 @@
 using Jrpg.InventorySystem.PgItems;
 using Jrpg.CharacterSystem;
 using Jrpg.CharacterSystem.Classes;
+using Jrpg.CharacterSystem.Classes.Definitions;
 
 namespace Jrpg.BattleSystem.Enemies
 {
@@ -31,7 +32,7 @@ namespace Jrpg.BattleSystem.Enemies
             ItemGenerator itemGenerator
             ) : base(name, defaultDiscipline)
         {
-            if(defaultDiscipline.GetType().BaseType
+            if (defaultDiscipline.GetType().BaseType
                 != Type.GetType("Jrpg.BattleSystem.Enemies.EnemyClass"))
             {
                 throw new NotSupportedException(
@@ -75,5 +76,11 @@ namespace Jrpg.BattleSystem.Enemies
         {
             return itemGenerator.GenerateItem(dropSource);
         }
+
+        public Proximity Proximity {
+            get {
+                return ((EnemyClass)currentClass).Proximity;
+            }
+        }   
     }
 }
