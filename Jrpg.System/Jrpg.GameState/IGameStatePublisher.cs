@@ -5,7 +5,7 @@ namespace Jrpg.GameState
     {
         void Register(IGameStateSubscriber subscriber);
         void Unregister(IGameStateSubscriber subscriber);
-        void PublishStateUpdate(GameStateValue state);
-        GameStateValue CurrentState();
+        void Transition(GameStateValue state);
+        GameStateValue State { get; }
     }
 }

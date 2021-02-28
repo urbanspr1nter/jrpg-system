@@ -3,6 +3,10 @@ namespace Jrpg.GameState
 {
     public interface IGameStateSubscriber
     {
-        void ReceiveStateUpdate(GameStateValue state);
+        void Receive(GameStateValue state);
+
+        void OnRegister();
+
+        void OnUnregister();
     }
 }

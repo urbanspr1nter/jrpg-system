@@ -4,21 +4,26 @@ namespace Jrpg.GameState
 {
     public class GameStateManager : IGameStatePublisher
     {
-        private List<IGameStateSubscriber> subscribers;
-        private GameStateValue currentState;
+        private readonly List<IGameStateSubscriber> subscribers;
+        public GameStateValue State { get; private set; }
 
         public GameStateManager(GameStateValue initialState)
         {
             subscribers = new List<IGameStateSubscriber>();
-            currentState = initialState;
+            State = initialState;
         }
 
-        public void PublishStateUpdate(GameStateValue state)
+        public void Transition(GameStateValue state)
         {
-            currentState = state;
+            if (subscribers.Count == 0)
+            {
+                return;
+            }
+
+            State = state;
             foreach(var subscriber in subscribers)
             {
-                subscriber.ReceiveStateUpdate(state);
+                subscriber.Receive(state);
             }
         }
 
@@ -29,6 +34,8 @@ namespace Jrpg.GameState
                 return;
             }
 
+            subscriber.OnRegister();
+            
             subscribers.Add(subscriber);
         }
 
@@ -38,12 +45,10 @@ namespace Jrpg.GameState
             {
                 return;
             }
-            subscribers.Remove(subscriber);
-        }
 
-        public GameStateValue CurrentState()
-        {
-            return currentState;
+            subscriber.OnUnregister();
+            
+            subscribers.Remove(subscriber);
         }
     }
 }

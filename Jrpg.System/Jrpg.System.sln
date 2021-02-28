@@ -27,10 +27,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jrpg.BattleSystem", "Jrpg.B
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jrpg.Unity", "Jrpg.Unity\Jrpg.Unity.csproj", "{9BB45A3F-5022-475E-9B9E-B03C466C419C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jrpg.MenuSystem", "Jrpg.MenuSystem\Jrpg.MenuSystem.csproj", "{0EC04CB6-C087-4814-8715-4147967AC5DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jrpg.MenuSystem", "Jrpg.MenuSystem\Jrpg.MenuSystem.csproj", "{0EC04CB6-C087-4814-8715-4147967AC5DD}"
 	ProjectSection(ProjectDependencies) = postProject
 		{ACE7B4F7-A1F3-4039-AA45-6E5A812BC67D} = {ACE7B4F7-A1F3-4039-AA45-6E5A812BC67D}
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jrpg.GameState.Tests", "Jrpg.GameState.Tests\Jrpg.GameState.Tests.csproj", "{69FE5220-6FED-4DEA-9146-83EAB414231E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -86,6 +88,10 @@ Global
 		{0EC04CB6-C087-4814-8715-4147967AC5DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0EC04CB6-C087-4814-8715-4147967AC5DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0EC04CB6-C087-4814-8715-4147967AC5DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69FE5220-6FED-4DEA-9146-83EAB414231E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69FE5220-6FED-4DEA-9146-83EAB414231E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69FE5220-6FED-4DEA-9146-83EAB414231E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69FE5220-6FED-4DEA-9146-83EAB414231E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
