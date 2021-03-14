@@ -22,9 +22,7 @@
     <None Remove=".DS_Store" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Scalers\" />
     <Folder Include="Classes\" />
-    <Folder Include="Scalers\Freelancer\" />
     <Folder Include="StatusEffects\" />
     <Folder Include="Techniques\" />
     <Folder Include="Classes\Definitions\" />
@@ -33,6 +31,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Jrpg.ItemComponents\Jrpg.ItemComponents.csproj" />
     <ProjectReference Include="..\Jrpg.GameState\Jrpg.GameState.csproj" />
+    <ProjectReference Include="..\Jrpg.System.Interfaces\Jrpg.System.Interfaces.csproj" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Bcl.HashCode" Version="1.1.0" />

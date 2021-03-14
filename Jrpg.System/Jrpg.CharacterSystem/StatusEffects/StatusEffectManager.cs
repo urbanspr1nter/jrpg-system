@@ -5,13 +5,14 @@ using Jrpg.CharacterSystem.StatusEffects.Definitions;
 
 namespace Jrpg.CharacterSystem.StatusEffects
 {
-    public class StatusEffectManager : IGameStateSubscriber
+    public class StatusEffectManager : GameStateSubscriber
     {
         private GameStateValue _state;
         private Dictionary<Character, List<StatusEffect>> map;
         private StatusEffectFactory factory;
 
-        public StatusEffectManager()
+        // Fake a context by passing in a dummy value
+        public StatusEffectManager() : base(new Dictionary<string, object>())
         {
             map = new Dictionary<Character, List<StatusEffect>>();
             factory = new StatusEffectFactory();
@@ -20,11 +21,6 @@ namespace Jrpg.CharacterSystem.StatusEffects
         public void RegisterStatusEffect(string name, StatusEffectDefinition definition)
         {
             factory.Register(name, definition);
-        }
-
-        public void ReceiveStateUpdate(GameStateValue state)
-        {
-            _state = state;
         }
 
         public void ApplyEffect(Character character, string name)
@@ -128,6 +124,11 @@ namespace Jrpg.CharacterSystem.StatusEffects
             }
 
             return result;
+        }
+
+        public override void Receive(GameStateValue state)
+        {
+            _state = state;
         }
     }
 }

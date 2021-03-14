@@ -2,18 +2,21 @@
 using System.Collections.Generic;
 using Jrpg.CharacterSystem.Techniques;
 using Jrpg.CharacterSystem.Classes.Definitions;
+using Jrpg.CharacterSystem.Statistics;
 
 namespace Jrpg.CharacterSystem.Classes
 {
     public class ClassManager
     {
+        private StatisticTypeRegistry statisticTypeRegistry;
         private Dictionary<string, ClassDefinition> registered;
         private Dictionary<string, TechniqueDefinition> techniqueDefinitions;
 
-        public ClassManager(Dictionary<string, TechniqueDefinition> techDefs)
+        public ClassManager(Dictionary<string, TechniqueDefinition> techDefs, StatisticTypeRegistry statTypeRegistry)
         {
             registered = new Dictionary<string, ClassDefinition>();
             techniqueDefinitions = techDefs;
+            statisticTypeRegistry = statTypeRegistry;
         }
 
         public void Register(string tag, ClassDefinition classDefinition)
@@ -47,12 +50,12 @@ namespace Jrpg.CharacterSystem.Classes
 
             var classDefinition = registered[characterClassTag];
             var jobClassAgent = classDefinition.Agent;
-            var jobClassStartingStatistics = new Dictionary<StatisticType, Statistic>();
+            var jobClassStartingStatistics = new StatisticRegistry();
 
             foreach(var classStatistic in classDefinition.StartingStatistics)
             {
-                var statisticType = CommonUtils.ToStatisticType(classStatistic.Name);
-                var statistic = CommonUtils.ToStatistic(classStatistic);
+                var statisticType = statisticTypeRegistry.FindByName(classStatistic.Type);
+                var statistic = new Statistic(statisticType, classStatistic.DefaultValue, classStatistic.MaxValue, new BaseStatisticModifier());
 
                 jobClassStartingStatistics.Add(statisticType, statistic);
             }
